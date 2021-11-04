@@ -21,7 +21,13 @@ namespace JobTrackingProject.Forms
         void Listele()
         {
             DbJobTrackingEntities db = new DbJobTrackingEntities();
-            gridControl1.DataSource = db.TblDepartments.ToList();
+            var values = (from x in db.TblDepartments
+                select new
+                {
+                    x.ID,
+                    x.Name
+                }).ToList();
+            gridControl1.DataSource = values;
 
         }
 
