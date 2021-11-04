@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DbJobTrackingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Users" Type="nvarchar" MaxLength="10" />
+          <Property Name="Password" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DbJobTracking.dbo.TblCompanies' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TblCompanies">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" />
+          <Property Name="Authorized" Type="nvarchar" MaxLength="30" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sector" Type="nvarchar" MaxLength="30" />
+          <Property Name="Province" Type="nvarchar" MaxLength="20" />
+          <Property Name="District" Type="nvarchar" MaxLength="30" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TblDepartments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TblEmployee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="30" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Image" Type="nvarchar" MaxLength="100" />
+          <Property Name="Department" Type="int" />
+        </EntityType>
+        <EntityType Name="TblTask">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GiveTask" Type="int" />
+          <Property Name="GetTask" Type="int" />
+          <Property Name="Satement" Type="nvarchar" MaxLength="500" />
+          <Property Name="Status" Type="nvarchar" MaxLength="20" />
+          <Property Name="Dates" Type="date" />
+        </EntityType>
+        <EntityType Name="TblTaskDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Task" Type="int" />
+          <Property Name="Statement" Type="nvarchar" MaxLength="200" />
+          <Property Name="Dates" Type="date" />
+          <Property Name="Clock" Type="char" MaxLength="5" />
+        </EntityType>
+        <Association Name="FK_TblEmployee_TblDepartments">
+          <End Role="TblDepartments" Type="Self.TblDepartments" Multiplicity="0..1" />
+          <End Role="TblEmployee" Type="Self.TblEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblDepartments">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblEmployee">
+              <PropertyRef Name="Department" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblTask_TblEmployee">
+          <End Role="TblEmployee" Type="Self.TblEmployee" Multiplicity="0..1" />
+          <End Role="TblTask" Type="Self.TblTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblEmployee">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblTask">
+              <PropertyRef Name="GiveTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblTask_TblEmployee1">
+          <End Role="TblEmployee" Type="Self.TblEmployee" Multiplicity="0..1" />
+          <End Role="TblTask" Type="Self.TblTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblEmployee">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblTask">
+              <PropertyRef Name="GetTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblTaskDetail_TblTask">
+          <End Role="TblTask" Type="Self.TblTask" Multiplicity="0..1" />
+          <End Role="TblTaskDetail" Type="Self.TblTaskDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblTask">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblTaskDetail">
+              <PropertyRef Name="Task" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbJobTrackingModelStoreContainer">
+          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblDepartments" EntityType="Self.TblDepartments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblEmployee" EntityType="Self.TblEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblTask" EntityType="Self.TblTask" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblTaskDetail" EntityType="Self.TblTaskDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCompanies" EntityType="Self.TblCompanies" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TblCompanies].[ID] AS [ID], 
+    [TblCompanies].[Name] AS [Name], 
+    [TblCompanies].[Authorized] AS [Authorized], 
+    [TblCompanies].[Telephone] AS [Telephone], 
+    [TblCompanies].[Email] AS [Email], 
+    [TblCompanies].[Sector] AS [Sector], 
+    [TblCompanies].[Province] AS [Province], 
+    [TblCompanies].[District] AS [District], 
+    [TblCompanies].[Address] AS [Address]
+    FROM [dbo].[TblCompanies] AS [TblCompanies]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_TblEmployee_TblDepartments" Association="Self.FK_TblEmployee_TblDepartments">
+            <End Role="TblDepartments" EntitySet="TblDepartments" />
+            <End Role="TblEmployee" EntitySet="TblEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblTask_TblEmployee" Association="Self.FK_TblTask_TblEmployee">
+            <End Role="TblEmployee" EntitySet="TblEmployee" />
+            <End Role="TblTask" EntitySet="TblTask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblTask_TblEmployee1" Association="Self.FK_TblTask_TblEmployee1">
+            <End Role="TblEmployee" EntitySet="TblEmployee" />
+            <End Role="TblTask" EntitySet="TblTask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblTaskDetail_TblTask" Association="Self.FK_TblTaskDetail_TblTask">
+            <End Role="TblTask" EntitySet="TblTask" />
+            <End Role="TblTaskDetail" EntitySet="TblTaskDetail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbJobTrackingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Users" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblDepartments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TblEmployee" Relationship="Self.FK_TblEmployee_TblDepartments" FromRole="TblDepartments" ToRole="TblEmployee" />
+        </EntityType>
+        <EntityType Name="TblEmployee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="Int32" />
+          <NavigationProperty Name="TblDepartments" Relationship="Self.FK_TblEmployee_TblDepartments" FromRole="TblEmployee" ToRole="TblDepartments" />
+          <NavigationProperty Name="TblTask" Relationship="Self.FK_TblTask_TblEmployee" FromRole="TblEmployee" ToRole="TblTask" />
+          <NavigationProperty Name="TblTask1" Relationship="Self.FK_TblTask_TblEmployee1" FromRole="TblEmployee" ToRole="TblTask" />
+        </EntityType>
+        <EntityType Name="TblTask">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GiveTask" Type="Int32" />
+          <Property Name="GetTask" Type="Int32" />
+          <Property Name="Satement" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Dates" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TblEmployee" Relationship="Self.FK_TblTask_TblEmployee" FromRole="TblTask" ToRole="TblEmployee" />
+          <NavigationProperty Name="TblEmployee1" Relationship="Self.FK_TblTask_TblEmployee1" FromRole="TblTask" ToRole="TblEmployee" />
+          <NavigationProperty Name="TblTaskDetail" Relationship="Self.FK_TblTaskDetail_TblTask" FromRole="TblTask" ToRole="TblTaskDetail" />
+        </EntityType>
+        <EntityType Name="TblTaskDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Task" Type="Int32" />
+          <Property Name="Statement" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Dates" Type="DateTime" Precision="0" />
+          <Property Name="Clock" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="TblTask" Relationship="Self.FK_TblTaskDetail_TblTask" FromRole="TblTaskDetail" ToRole="TblTask" />
+        </EntityType>
+        <EntityType Name="TblCompanies">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Authorized" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sector" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Province" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_TblEmployee_TblDepartments">
+          <End Role="TblDepartments" Type="Self.TblDepartments" Multiplicity="0..1" />
+          <End Role="TblEmployee" Type="Self.TblEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblDepartments">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblEmployee">
+              <PropertyRef Name="Department" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblTask_TblEmployee">
+          <End Role="TblEmployee" Type="Self.TblEmployee" Multiplicity="0..1" />
+          <End Role="TblTask" Type="Self.TblTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblEmployee">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblTask">
+              <PropertyRef Name="GiveTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblTask_TblEmployee1">
+          <End Role="TblEmployee" Type="Self.TblEmployee" Multiplicity="0..1" />
+          <End Role="TblTask" Type="Self.TblTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblEmployee">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblTask">
+              <PropertyRef Name="GetTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblTaskDetail_TblTask">
+          <End Role="TblTask" Type="Self.TblTask" Multiplicity="0..1" />
+          <End Role="TblTaskDetail" Type="Self.TblTaskDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblTask">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblTaskDetail">
+              <PropertyRef Name="Task" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbJobTrackingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" />
+          <EntitySet Name="TblDepartments" EntityType="Self.TblDepartments" />
+          <EntitySet Name="TblEmployee" EntityType="Self.TblEmployee" />
+          <EntitySet Name="TblTask" EntityType="Self.TblTask" />
+          <EntitySet Name="TblTaskDetail" EntityType="Self.TblTaskDetail" />
+          <EntitySet Name="TblCompanies" EntityType="Self.TblCompanies" />
+          <AssociationSet Name="FK_TblEmployee_TblDepartments" Association="Self.FK_TblEmployee_TblDepartments">
+            <End Role="TblDepartments" EntitySet="TblDepartments" />
+            <End Role="TblEmployee" EntitySet="TblEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblTask_TblEmployee" Association="Self.FK_TblTask_TblEmployee">
+            <End Role="TblEmployee" EntitySet="TblEmployee" />
+            <End Role="TblTask" EntitySet="TblTask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblTask_TblEmployee1" Association="Self.FK_TblTask_TblEmployee1">
+            <End Role="TblEmployee" EntitySet="TblEmployee" />
+            <End Role="TblTask" EntitySet="TblTask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblTaskDetail_TblTask" Association="Self.FK_TblTaskDetail_TblTask">
+            <End Role="TblTask" EntitySet="TblTask" />
+            <End Role="TblTaskDetail" EntitySet="TblTaskDetail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbJobTrackingModelStoreContainer" CdmEntityContainer="DbJobTrackingEntities">
+          <EntitySetMapping Name="TblAdmin">
+            <EntityTypeMapping TypeName="DbJobTrackingModel.TblAdmin">
+              <MappingFragment StoreEntitySet="TblAdmin">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Users" ColumnName="Users" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblDepartments">
+            <EntityTypeMapping TypeName="DbJobTrackingModel.TblDepartments">
+              <MappingFragment StoreEntitySet="TblDepartments">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblEmployee">
+            <EntityTypeMapping TypeName="DbJobTrackingModel.TblEmployee">
+              <MappingFragment StoreEntitySet="TblEmployee">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblTask">
+            <EntityTypeMapping TypeName="DbJobTrackingModel.TblTask">
+              <MappingFragment StoreEntitySet="TblTask">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GiveTask" ColumnName="GiveTask" />
+                <ScalarProperty Name="GetTask" ColumnName="GetTask" />
+                <ScalarProperty Name="Satement" ColumnName="Satement" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Dates" ColumnName="Dates" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblTaskDetail">
+            <EntityTypeMapping TypeName="DbJobTrackingModel.TblTaskDetail">
+              <MappingFragment StoreEntitySet="TblTaskDetail">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Task" ColumnName="Task" />
+                <ScalarProperty Name="Statement" ColumnName="Statement" />
+                <ScalarProperty Name="Dates" ColumnName="Dates" />
+                <ScalarProperty Name="Clock" ColumnName="Clock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCompanies">
+            <EntityTypeMapping TypeName="DbJobTrackingModel.TblCompanies">
+              <MappingFragment StoreEntitySet="TblCompanies">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Authorized" ColumnName="Authorized" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Sector" ColumnName="Sector" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

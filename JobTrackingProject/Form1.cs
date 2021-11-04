@@ -16,5 +16,17 @@ namespace JobTrackingProject
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDepartmentList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmDepartments frm = new Forms.FrmDepartments();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
