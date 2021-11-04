@@ -33,18 +33,18 @@ namespace JobTrackingProject.Forms
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.TxtID = new DevExpress.XtraEditors.TextEdit();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.TxtName = new DevExpress.XtraEditors.TextEdit();
+            this.btnList = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.SuspendLayout();
@@ -72,21 +72,23 @@ namespace JobTrackingProject.Forms
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Departman ID";
             // 
-            // textEdit1
+            // TxtID
             // 
-            this.textEdit1.Location = new System.Drawing.Point(124, 46);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(241, 20);
-            this.textEdit1.TabIndex = 1;
+            this.TxtID.Location = new System.Drawing.Point(124, 46);
+            this.TxtID.Name = "TxtID";
+            this.TxtID.Size = new System.Drawing.Size(241, 20);
+            this.TxtID.TabIndex = 1;
+            this.TxtID.EditValueChanged += new System.EventHandler(this.TxtID_EditValueChanged);
             // 
-            // simpleButton1
+            // btnAdd
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(124, 132);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(241, 23);
-            this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = "Ekle";
+            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
+            this.btnAdd.Location = new System.Drawing.Point(124, 132);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(241, 23);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "Ekle";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // labelControl2
             // 
@@ -97,58 +99,63 @@ namespace JobTrackingProject.Forms
             this.labelControl2.Text = "Departman Adı";
             this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
             // 
-            // textEdit2
+            // TxtName
             // 
-            this.textEdit2.Location = new System.Drawing.Point(124, 76);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(241, 20);
-            this.textEdit2.TabIndex = 4;
-            this.textEdit2.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
+            this.TxtName.EditValue = "";
+            this.TxtName.Location = new System.Drawing.Point(124, 76);
+            this.TxtName.Name = "TxtName";
+            this.TxtName.Properties.AccessibleName = "TxtName";
+            this.TxtName.Size = new System.Drawing.Size(241, 20);
+            this.TxtName.TabIndex = 4;
+            this.TxtName.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
             // 
-            // simpleButton2
+            // btnList
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(124, 102);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(241, 24);
-            this.simpleButton2.TabIndex = 5;
-            this.simpleButton2.Text = "Listele";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.btnList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnList.ImageOptions.Image")));
+            this.btnList.Location = new System.Drawing.Point(124, 102);
+            this.btnList.Name = "btnList";
+            this.btnList.Size = new System.Drawing.Size(241, 24);
+            this.btnList.TabIndex = 5;
+            this.btnList.Text = "Listele";
+            this.btnList.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
-            // simpleButton3
+            // btnDelete
             // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(124, 161);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(241, 23);
-            this.simpleButton3.TabIndex = 6;
-            this.simpleButton3.Text = "Sil";
+            this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
+            this.btnDelete.Location = new System.Drawing.Point(124, 161);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(241, 23);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "Sil";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // simpleButton4
+            // btnUpdate
             // 
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(124, 190);
-            this.simpleButton4.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(241, 23);
-            this.simpleButton4.TabIndex = 7;
-            this.simpleButton4.Text = "Güncelle";
+            this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
+            this.btnUpdate.Location = new System.Drawing.Point(124, 190);
+            this.btnUpdate.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(241, 23);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.Text = "Güncelle";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.simpleButton4);
-            this.groupControl1.Controls.Add(this.simpleButton3);
-            this.groupControl1.Controls.Add(this.simpleButton2);
-            this.groupControl1.Controls.Add(this.textEdit2);
+            this.groupControl1.Controls.Add(this.btnUpdate);
+            this.groupControl1.Controls.Add(this.btnDelete);
+            this.groupControl1.Controls.Add(this.btnList);
+            this.groupControl1.Controls.Add(this.TxtName);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.simpleButton1);
-            this.groupControl1.Controls.Add(this.textEdit1);
+            this.groupControl1.Controls.Add(this.btnAdd);
+            this.groupControl1.Controls.Add(this.TxtID);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Location = new System.Drawing.Point(576, 1);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(392, 325);
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "groupControl1";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // FrmDepartments
             // 
@@ -161,8 +168,8 @@ namespace JobTrackingProject.Forms
             this.Text = "Departmanlar";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -174,13 +181,13 @@ namespace JobTrackingProject.Forms
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.TextEdit TxtID;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        internal DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.TextEdit TxtName;
+        internal DevExpress.XtraEditors.SimpleButton btnList;
+        private DevExpress.XtraEditors.SimpleButton btnDelete;
+        private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }

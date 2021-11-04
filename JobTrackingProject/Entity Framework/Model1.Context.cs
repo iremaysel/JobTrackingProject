@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using JobTrackingProject.Entity_Framework;
+
 namespace JobTrackingProject
 {
     using System;
