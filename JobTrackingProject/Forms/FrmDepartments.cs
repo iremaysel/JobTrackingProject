@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using JobTrackingProject.Entity_Framework;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace JobTrackingProject.Forms
 {
@@ -17,10 +18,10 @@ namespace JobTrackingProject.Forms
         {
             InitializeComponent();
         }
+        DbJobTrackingEntities db = new DbJobTrackingEntities();
 
         void Listele()
         {
-            DbJobTrackingEntities db = new DbJobTrackingEntities();
             var values = (from x in db.TblDepartments
                 select new
                 {
@@ -55,7 +56,14 @@ namespace JobTrackingProject.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            
+            TblDepartments t = new TblDepartments();
+            t.Name = TxtName.Text;
+            db.TblDepartments.Add(t);
+            db.SaveChanges();
+            XtraMessageBox.Show("Departman başarılı bir şekilde sisteme kaydedildi.", "Bilgi",
+                MessageBoxButtons.OK,MessageBoxIcon.Information);
+            Listele();
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
