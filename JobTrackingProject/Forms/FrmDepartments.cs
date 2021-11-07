@@ -86,5 +86,11 @@ namespace JobTrackingProject.Forms
         {
 
         }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            TxtID.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
+            TxtName.Text = gridView1.GetFocusedRowCellValue("Name").ToString();
+        }
     }
 }
