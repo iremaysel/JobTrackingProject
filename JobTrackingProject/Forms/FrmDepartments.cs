@@ -23,11 +23,11 @@ namespace JobTrackingProject.Forms
         void ToList()
         {
             var values = (from x in db.TblDepartments
-                select new
-                {
-                    x.ID,
-                    x.Name
-                }).ToList();
+                          select new
+                          {
+                              x.ID,
+                              x.Name
+                          }).ToList();
             gridControl1.DataSource = values;
 
         }
@@ -49,7 +49,7 @@ namespace JobTrackingProject.Forms
 
         }
 
-       private void TxtID_EditValueChanged(object sender, EventArgs e)
+        private void TxtID_EditValueChanged(object sender, EventArgs e)
         {
 
         }
@@ -61,7 +61,7 @@ namespace JobTrackingProject.Forms
             db.TblDepartments.Add(t);
             db.SaveChanges();
             XtraMessageBox.Show("Departman başarılı bir şekilde sisteme kaydedildi.", "Bilgi",
-                MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
             ToList();
 
         }
@@ -79,7 +79,13 @@ namespace JobTrackingProject.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            int x = int.Parse(TxtID.Text);
+            var value = db.TblDepartments.Find(x);
+            value.Name = TxtName.Text;
+            db.SaveChanges();
+            XtraMessageBox.Show("Departman güncelleme işlemi başarıyla gerçekleşti.", "Bilgi", MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
+            ToList();
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
