@@ -20,7 +20,7 @@ namespace JobTrackingProject.Forms
         }
         DbJobTrackingEntities db = new DbJobTrackingEntities();
 
-        void Listele()
+        void ToList()
         {
             var values = (from x in db.TblDepartments
                 select new
@@ -41,7 +41,7 @@ namespace JobTrackingProject.Forms
         // Btn-list
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            Listele();
+            ToList();
         }
 
         private void textEdit2_EditValueChanged(object sender, EventArgs e)
@@ -62,13 +62,19 @@ namespace JobTrackingProject.Forms
             db.SaveChanges();
             XtraMessageBox.Show("Departman başarılı bir şekilde sisteme kaydedildi.", "Bilgi",
                 MessageBoxButtons.OK,MessageBoxIcon.Information);
-            Listele();
+            ToList();
 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            int x = int.Parse(TxtID.Text);
+            var value = db.TblDepartments.Find(x);
+            db.TblDepartments.Remove(value);
+            db.SaveChanges();
+            XtraMessageBox.Show("Departman silme işlemi başarıyla gerçekleşti.", "Bilgi", MessageBoxButtons.OK,
+                MessageBoxIcon.Stop);
+            ToList();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
