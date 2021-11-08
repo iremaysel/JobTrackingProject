@@ -98,5 +98,10 @@ namespace JobTrackingProject.Forms
             TxtID.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
             TxtName.Text = gridView1.GetFocusedRowCellValue("Name").ToString();
         }
+
+        private void labelControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

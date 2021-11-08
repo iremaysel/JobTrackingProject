@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JobTrackingProject.Forms;
 
 namespace JobTrackingProject
 {
@@ -27,6 +28,13 @@ namespace JobTrackingProject
             Forms.FrmDepartments frm = new Forms.FrmDepartments();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void BtnEmployeeList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmEmployees frm2 = new FrmEmployees();
+            frm2.MdiParent = this;
+            frm2.Show();
         }
     }
 }
