@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using JobTrackingProject.Entity_Framework;
 
 namespace JobTrackingProject.Forms
@@ -68,6 +69,26 @@ namespace JobTrackingProject.Forms
         }
 
         private void textEdit3_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            TblEmployee t = new TblEmployee();
+            t.Name = TxtName.Text;
+            t.Surname = TxtSurname.Text;
+            t.Email = TxtEmail.Text;
+            t.Image = TxtEmail.Text;
+            t.Department = int.Parse(departmentNames.EditValue.ToString());
+            db.TblEmployee.Add(t);
+            db.SaveChanges();
+            XtraMessageBox.Show("Yeni Personel kaydı başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            Employees();
+        }
+
+        private void TxtName_EditValueChanged(object sender, EventArgs e)
         {
 
         }

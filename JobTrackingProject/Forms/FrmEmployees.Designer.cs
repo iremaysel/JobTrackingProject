@@ -43,12 +43,12 @@ namespace JobTrackingProject.Forms
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.departmentNames = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.TxtImage = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.TxtEmail = new DevExpress.XtraEditors.TextEdit();
+            this.textemail = new DevExpress.XtraEditors.LabelControl();
+            this.TxtSurname = new DevExpress.XtraEditors.TextEdit();
+            this.textsurname = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtName.Properties)).BeginInit();
@@ -56,9 +56,9 @@ namespace JobTrackingProject.Forms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.departmentNames.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtImage.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtSurname.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -114,6 +114,7 @@ namespace JobTrackingProject.Forms
             this.TxtName.Properties.AccessibleName = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(241, 20);
             this.TxtName.TabIndex = 4;
+            this.TxtName.EditValueChanged += new System.EventHandler(this.TxtName_EditValueChanged);
             // 
             // labelControl2
             // 
@@ -131,6 +132,7 @@ namespace JobTrackingProject.Forms
             this.btnAdd.Size = new System.Drawing.Size(241, 23);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Ekle";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // TxtID
             // 
@@ -152,12 +154,12 @@ namespace JobTrackingProject.Forms
             // 
             this.groupControl1.Controls.Add(this.departmentNames);
             this.groupControl1.Controls.Add(this.labelControl6);
-            this.groupControl1.Controls.Add(this.textEdit3);
+            this.groupControl1.Controls.Add(this.TxtImage);
             this.groupControl1.Controls.Add(this.labelControl5);
-            this.groupControl1.Controls.Add(this.textEdit2);
-            this.groupControl1.Controls.Add(this.labelControl4);
-            this.groupControl1.Controls.Add(this.textEdit1);
-            this.groupControl1.Controls.Add(this.labelControl3);
+            this.groupControl1.Controls.Add(this.TxtEmail);
+            this.groupControl1.Controls.Add(this.textemail);
+            this.groupControl1.Controls.Add(this.TxtSurname);
+            this.groupControl1.Controls.Add(this.textsurname);
             this.groupControl1.Controls.Add(this.btnUpdate);
             this.groupControl1.Controls.Add(this.btnDelete);
             this.groupControl1.Controls.Add(this.btnList);
@@ -189,59 +191,59 @@ namespace JobTrackingProject.Forms
             this.labelControl6.TabIndex = 14;
             this.labelControl6.Text = "Departman:";
             // 
-            // textEdit3
+            // TxtImage
             // 
-            this.textEdit3.EditValue = "";
-            this.textEdit3.Location = new System.Drawing.Point(121, 152);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.AccessibleName = "TxtName";
-            this.textEdit3.Size = new System.Drawing.Size(241, 20);
-            this.textEdit3.TabIndex = 13;
-            this.textEdit3.EditValueChanged += new System.EventHandler(this.textEdit3_EditValueChanged);
+            this.TxtImage.EditValue = "";
+            this.TxtImage.Location = new System.Drawing.Point(121, 152);
+            this.TxtImage.Name = "TxtImage";
+            this.TxtImage.Properties.AccessibleName = "TxtName";
+            this.TxtImage.Size = new System.Drawing.Size(241, 20);
+            this.TxtImage.TabIndex = 13;
+            this.TxtImage.EditValueChanged += new System.EventHandler(this.textEdit3_EditValueChanged);
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(38, 155);
+            this.labelControl5.Location = new System.Drawing.Point(59, 155);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(55, 13);
+            this.labelControl5.Size = new System.Drawing.Size(34, 13);
             this.labelControl5.TabIndex = 12;
-            this.labelControl5.Text = "Mail Adresi:";
+            this.labelControl5.Text = "Görsel:";
             this.labelControl5.Click += new System.EventHandler(this.labelControl5_Click);
             // 
-            // textEdit2
+            // TxtEmail
             // 
-            this.textEdit2.EditValue = "";
-            this.textEdit2.Location = new System.Drawing.Point(121, 124);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.AccessibleName = "TxtName";
-            this.textEdit2.Size = new System.Drawing.Size(241, 20);
-            this.textEdit2.TabIndex = 11;
+            this.TxtEmail.EditValue = "";
+            this.TxtEmail.Location = new System.Drawing.Point(121, 124);
+            this.TxtEmail.Name = "TxtEmail";
+            this.TxtEmail.Properties.AccessibleName = "TxtName";
+            this.TxtEmail.Size = new System.Drawing.Size(241, 20);
+            this.TxtEmail.TabIndex = 11;
             // 
-            // labelControl4
+            // textemail
             // 
-            this.labelControl4.Location = new System.Drawing.Point(38, 127);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(55, 13);
-            this.labelControl4.TabIndex = 10;
-            this.labelControl4.Text = "Mail Adresi:";
-            this.labelControl4.Click += new System.EventHandler(this.labelControl4_Click);
+            this.textemail.Location = new System.Drawing.Point(38, 127);
+            this.textemail.Name = "textemail";
+            this.textemail.Size = new System.Drawing.Size(55, 13);
+            this.textemail.TabIndex = 10;
+            this.textemail.Text = "Mail Adresi:";
+            this.textemail.Click += new System.EventHandler(this.labelControl4_Click);
             // 
-            // textEdit1
+            // TxtSurname
             // 
-            this.textEdit1.EditValue = "";
-            this.textEdit1.Location = new System.Drawing.Point(121, 98);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.AccessibleName = "TxtName";
-            this.textEdit1.Size = new System.Drawing.Size(241, 20);
-            this.textEdit1.TabIndex = 9;
+            this.TxtSurname.EditValue = "";
+            this.TxtSurname.Location = new System.Drawing.Point(121, 98);
+            this.TxtSurname.Name = "TxtSurname";
+            this.TxtSurname.Properties.AccessibleName = "TxtName";
+            this.TxtSurname.Size = new System.Drawing.Size(241, 20);
+            this.TxtSurname.TabIndex = 9;
             // 
-            // labelControl3
+            // textsurname
             // 
-            this.labelControl3.Location = new System.Drawing.Point(57, 101);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(36, 13);
-            this.labelControl3.TabIndex = 8;
-            this.labelControl3.Text = "Soyadı:";
+            this.textsurname.Location = new System.Drawing.Point(57, 101);
+            this.textsurname.Name = "textsurname";
+            this.textsurname.Size = new System.Drawing.Size(36, 13);
+            this.textsurname.TabIndex = 8;
+            this.textsurname.Text = "Soyadı:";
             // 
             // FrmEmployees
             // 
@@ -261,9 +263,9 @@ namespace JobTrackingProject.Forms
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.departmentNames.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtImage.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtSurname.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -281,11 +283,11 @@ namespace JobTrackingProject.Forms
         private DevExpress.XtraEditors.TextEdit TxtID;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit TxtEmail;
+        private DevExpress.XtraEditors.LabelControl textemail;
+        private DevExpress.XtraEditors.TextEdit TxtSurname;
+        private DevExpress.XtraEditors.LabelControl textsurname;
+        private DevExpress.XtraEditors.TextEdit TxtImage;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LookUpEdit departmentNames;
         private DevExpress.XtraEditors.LabelControl labelControl6;
