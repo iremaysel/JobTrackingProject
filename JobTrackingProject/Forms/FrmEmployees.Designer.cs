@@ -96,6 +96,7 @@ namespace JobTrackingProject.Forms
             this.btnDelete.Size = new System.Drawing.Size(241, 23);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Sil";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnList
             // 

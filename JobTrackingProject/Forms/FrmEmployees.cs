@@ -29,9 +29,10 @@ namespace JobTrackingProject.Forms
                              x.ID,
                              x.Name,
                              x.Email,
-                             x.Department
+                             departments = x.TblDepartments.Name,
+                             x.Status
                          };
-            gridControl1.DataSource = values.ToList();
+            gridControl1.DataSource = values.Where(x=>x.Status == true).ToList();
 
         }
         private void FrmEmployees_Load(object sender, EventArgs e)
@@ -96,6 +97,18 @@ namespace JobTrackingProject.Forms
         private void gridControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var x = int.Parse(TxtID.Text);
+            var value = db.TblEmployee.Find(x);
+            value.Status = false;
+            db.SaveChanges();
+            XtraMessageBox.Show("Personel başarıyla silindi. Silinen personeller," +
+                                "listesinden tüm silinmiş personel bilgilerine ulaşabilirsiniz!", "Bilgi", MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            Employees();
         }
     }
 }
