@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DbJobTrackingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbJobTrackingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TblAdmin">
           <Key>
             <PropertyRef Name="ID" />
@@ -47,6 +47,7 @@ warning 6002: The table/view 'DbJobTracking.dbo.TblCompanies' does not have a pr
           <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
           <Property Name="Image" Type="nvarchar" MaxLength="100" />
           <Property Name="Department" Type="int" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="TblTask">
           <Key>
@@ -153,8 +154,7 @@ warning 6002: The table/view 'DbJobTracking.dbo.TblCompanies' does not have a pr
             <End Role="TblTaskDetail" EntitySet="TblTaskDetail" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbJobTrackingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -188,6 +188,7 @@ warning 6002: The table/view 'DbJobTracking.dbo.TblCompanies' does not have a pr
           <NavigationProperty Name="TblDepartments" Relationship="Self.FK_TblEmployee_TblDepartments" FromRole="TblEmployee" ToRole="TblDepartments" />
           <NavigationProperty Name="TblTask" Relationship="Self.FK_TblTask_TblEmployee" FromRole="TblEmployee" ToRole="TblTask" />
           <NavigationProperty Name="TblTask1" Relationship="Self.FK_TblTask_TblEmployee1" FromRole="TblEmployee" ToRole="TblTask" />
+          <Property Name="Status" Type="Boolean" />
         </EntityType>
         <EntityType Name="TblTask">
           <Key>
@@ -326,6 +327,7 @@ warning 6002: The table/view 'DbJobTracking.dbo.TblCompanies' does not have a pr
           <EntitySetMapping Name="TblEmployee">
             <EntityTypeMapping TypeName="DbJobTrackingModel.TblEmployee">
               <MappingFragment StoreEntitySet="TblEmployee">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
