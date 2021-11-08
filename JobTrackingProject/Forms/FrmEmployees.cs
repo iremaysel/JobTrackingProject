@@ -36,6 +36,15 @@ namespace JobTrackingProject.Forms
         private void FrmEmployees_Load(object sender, EventArgs e)
         {
             Employees();
+            var departments = (from x in db.TblDepartments
+                select new
+                {
+                    x.ID,
+                    x.Name
+                }).ToList();
+            departmentNames.Properties.ValueMember = "ID";
+            departmentNames.Properties.DisplayMember = "Name";
+            departmentNames.Properties.DataSource = departments;
         }
 
         private void btnList_Click(object sender, EventArgs e)
