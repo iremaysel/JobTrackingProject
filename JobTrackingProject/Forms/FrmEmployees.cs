@@ -28,7 +28,9 @@ namespace JobTrackingProject.Forms
                          {
                              x.ID,
                              x.Name,
+                             x.Surname,
                              x.Email,
+                             x.Image,
                              departments = x.TblDepartments.Name,
                              x.Status
                          };
@@ -108,6 +110,36 @@ namespace JobTrackingProject.Forms
             XtraMessageBox.Show("Personel başarıyla silindi. Silinen personeller," +
                                 "listesinden tüm silinmiş personel bilgilerine ulaşabilirsiniz!", "Bilgi", MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
+            Employees();
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, 
+            DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            TxtID.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
+            TxtName.Text = gridView1.GetFocusedRowCellValue("Name").ToString();
+            TxtSurname.Text = gridView1.GetFocusedRowCellValue("Surname").ToString();
+            TxtEmail.Text = gridView1.GetFocusedRowCellValue("Email").ToString();
+            TxtImage.Text = gridView1.GetFocusedRowCellValue("Image").ToString();
+            //departmentNames.EditValue = gridView1.GetFocusedRowCellValue("Departman").ToString();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            int x = int.Parse(TxtID.Text);
+            var value = db.TblEmployee.Find(x);
+            value.Name = TxtName.Text;
+            value.Surname = TxtSurname.Text;
+            value.Image = TxtImage.Text;
+            value.Department = int.Parse(departmentNames.EditValue.ToString());
+            db.SaveChanges();
+            XtraMessageBox.Show("Personel başarıyla güncellendi!", "Bilgi", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
             Employees();
         }
     }

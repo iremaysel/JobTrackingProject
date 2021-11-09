@@ -77,6 +77,7 @@ namespace JobTrackingProject.Forms
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // btnUpdate
             // 
@@ -87,6 +88,7 @@ namespace JobTrackingProject.Forms
             this.btnUpdate.Size = new System.Drawing.Size(241, 23);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Güncelle";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -174,6 +176,7 @@ namespace JobTrackingProject.Forms
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(392, 325);
             this.groupControl1.TabIndex = 7;
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // departmentNames
             // 
