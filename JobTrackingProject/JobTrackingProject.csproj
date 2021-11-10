@@ -115,6 +115,12 @@
     <Compile Include="Forms\FrmEmployees.Designer.cs">
       <DependentUpon>FrmEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmEmployeeStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEmployeeStatistics.Designer.cs">
+      <DependentUpon>FrmEmployeeStatistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmEmployees.resx">
       <DependentUpon>FrmEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEmployeeStatistics.resx">
+      <DependentUpon>FrmEmployeeStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -39,7 +39,7 @@ namespace JobTrackingProject
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.BtnEmployeeList = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnEmployeeStatistics = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
@@ -95,7 +95,7 @@ namespace JobTrackingProject
             this.barButtonItem4,
             this.BtnEmployeeList,
             this.barButtonItem6,
-            this.barButtonItem7,
+            this.BtnEmployeeStatistics,
             this.barButtonItem8,
             this.barButtonItem9,
             this.barButtonItem10,
@@ -171,8 +171,8 @@ namespace JobTrackingProject
             // 
             this.BtnEmployeeList.Caption = "Personel Listesi";
             this.BtnEmployeeList.Id = 6;
-            this.BtnEmployeeList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.BtnEmployeeList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.BtnEmployeeList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnEmployeeList.ImageOptions.Image")));
+            this.BtnEmployeeList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnEmployeeList.ImageOptions.LargeImage")));
             this.BtnEmployeeList.Name = "BtnEmployeeList";
             this.BtnEmployeeList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnEmployeeList_ItemClick);
             // 
@@ -184,13 +184,14 @@ namespace JobTrackingProject
             this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
             this.barButtonItem6.Name = "barButtonItem6";
             // 
-            // barButtonItem7
+            // BtnEmployeeStatistics
             // 
-            this.barButtonItem7.Caption = "Personel İstatistikleri";
-            this.barButtonItem7.Id = 8;
-            this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
-            this.barButtonItem7.Name = "barButtonItem7";
+            this.BtnEmployeeStatistics.Caption = "Personel İstatistikleri";
+            this.BtnEmployeeStatistics.Id = 8;
+            this.BtnEmployeeStatistics.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
+            this.BtnEmployeeStatistics.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.BtnEmployeeStatistics.Name = "BtnEmployeeStatistics";
+            this.BtnEmployeeStatistics.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnEmployeeStatistics_ItemClick);
             // 
             // barButtonItem8
             // 
@@ -377,7 +378,7 @@ namespace JobTrackingProject
             // 
             // ribbonPageGroup5
             // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup5.ItemLinks.Add(this.BtnEmployeeStatistics);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             // 
             // ribbonPage3
@@ -497,7 +498,7 @@ namespace JobTrackingProject
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem BtnEmployeeList;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem BtnEmployeeStatistics;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;

@@ -36,5 +36,12 @@ namespace JobTrackingProject
             frm2.MdiParent = this;
             frm2.Show();
         }
+
+        private void BtnEmployeeStatistics_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmEmployeeStatistics frm3 = new FrmEmployeeStatistics();
+            frm3.MdiParent = this;
+            frm3.Show();
+        }
     }
 }

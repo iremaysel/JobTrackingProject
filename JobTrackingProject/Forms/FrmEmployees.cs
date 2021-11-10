@@ -82,7 +82,8 @@ namespace JobTrackingProject.Forms
             t.Name = TxtName.Text;
             t.Surname = TxtSurname.Text;
             t.Email = TxtEmail.Text;
-            t.Image = TxtEmail.Text;
+            t.Image = TxtImage.Text;
+            t.Status = true;
             t.Department = int.Parse(departmentNames.EditValue.ToString());
             db.TblEmployee.Add(t);
             db.SaveChanges();
@@ -126,7 +127,7 @@ namespace JobTrackingProject.Forms
             TxtSurname.Text = gridView1.GetFocusedRowCellValue("Surname").ToString();
             TxtEmail.Text = gridView1.GetFocusedRowCellValue("Email").ToString();
             TxtImage.Text = gridView1.GetFocusedRowCellValue("Image").ToString();
-            //departmentNames.EditValue = gridView1.GetFocusedRowCellValue("Departman").ToString();
+            departmentNames.Text = gridView1.GetFocusedRowCellValue("departments").ToString();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -135,6 +136,7 @@ namespace JobTrackingProject.Forms
             var value = db.TblEmployee.Find(x);
             value.Name = TxtName.Text;
             value.Surname = TxtSurname.Text;
+            value.Email = TxtEmail.Text;
             value.Image = TxtImage.Text;
             value.Department = int.Parse(departmentNames.EditValue.ToString());
             db.SaveChanges();
