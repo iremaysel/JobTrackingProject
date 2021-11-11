@@ -158,6 +158,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="Entity Framework\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -194,6 +195,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8_system_report.ico" />
+    <None Include="Resources\icons8_system_information.ico" />
+    <None Include="Resources\icons8_chart_2.ico" />
+    <None Include="Resources\icons8_chart.ico" />
     <None Include="Resources\btnUpdate.ImageOptions.Image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

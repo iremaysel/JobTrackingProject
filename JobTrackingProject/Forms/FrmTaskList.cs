@@ -33,6 +33,15 @@ namespace JobTrackingProject.Forms
         private void FrmTaskList_Load(object sender, EventArgs e)
         {
             ToListTask();
+        }
+
+        private void labelControl3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl2_Click(object sender, EventArgs e)
+        {
 
         }
     }
