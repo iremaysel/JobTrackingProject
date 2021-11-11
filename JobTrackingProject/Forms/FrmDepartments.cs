@@ -103,5 +103,10 @@ namespace JobTrackingProject.Forms
         {
 
         }
+
+        private void FrmDepartments_Load(object sender, EventArgs e)
+        {
+            ToList();
+        }
     }
 }

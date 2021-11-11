@@ -168,6 +168,7 @@ namespace JobTrackingProject.Forms
             this.Controls.Add(this.gridControl1);
             this.Name = "FrmDepartments";
             this.Text = "Departmanlar";
+            this.Load += new System.EventHandler(this.FrmDepartments_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtID.Properties)).EndInit();
