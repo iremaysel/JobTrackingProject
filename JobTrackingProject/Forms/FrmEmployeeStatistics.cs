@@ -35,8 +35,8 @@ namespace JobTrackingProject.Forms
             LblCompany.Text = db.TblCompanies.Count().ToString();
             LblTotalEmployee.Text = db.TblEmployee.Count().ToString();
 
-            LblActiveJobs.Text = db.TblTask.Count(x => x.Status == "1").ToString();
-            LblPassiveJobs.Text = db.TblTask.Count(x => x.Status == "0").ToString();
+            LblActiveJobs.Text = db.TblTask.Count(x => x.Status == true).ToString();
+            LblPassiveJobs.Text = db.TblTask.Count(x => x.Status == false).ToString();
             LblEndTask.Text = db.TblTask.OrderByDescending(x=>x.ID).Select(x => x.Satement).FirstOrDefault();
 
             LblCityOfWork.Text = db.TblCompanies.Select(x => x.Province).Distinct().Count().ToString();

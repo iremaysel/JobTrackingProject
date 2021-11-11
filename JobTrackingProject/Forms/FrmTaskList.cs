@@ -19,20 +19,21 @@ namespace JobTrackingProject.Forms
         }
         DbJobTrackingEntities db = new DbJobTrackingEntities();
 
-        void ToListTask()
+        private void FrmTaskList_Load(object sender, EventArgs e)
         {
-            var values = (from x in db.TblTask
+            gridControl1.DataSource = (from x in db.TblTask
                 select new
                 {
                     x.Satement
                 }).ToList();
-            gridControl1.DataSource = values;
 
-        }
+            LblActiveTask.Text = db.TblTask.Where(x => x.Status == true).Count().ToString();
+            LblPassiveTask.Text = db.TblTask.Where(x => x.Status == false).Count().ToString();
+            LblTotalDepartment.Text = db.TblDepartments.Count().ToString();
 
-        private void FrmTaskList_Load(object sender, EventArgs e)
-        {
-            ToListTask();
+            chartControl1.Series["State1"].Points.AddPoint("Aktif Görevler", int.Parse(LblActiveTask.Text));
+            chartControl1.Series["State1"].Points.AddPoint("Pasif Görevler", int.Parse(LblPassiveTask.Text));
+
         }
 
         private void labelControl3_Click(object sender, EventArgs e)

@@ -24,7 +24,7 @@ namespace JobTrackingProject.Entity_Framework
         public Nullable<int> GiveTask { get; set; }
         public Nullable<int> GetTask { get; set; }
         public string Satement { get; set; }
-        public string Status { get; set; }
+        public Nullable<bool> Status { get; set; }
         public Nullable<System.DateTime> Dates { get; set; }
     
         public virtual TblEmployee TblEmployee { get; set; }

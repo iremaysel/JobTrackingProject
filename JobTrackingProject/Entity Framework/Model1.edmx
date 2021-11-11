@@ -57,7 +57,7 @@ warning 6002: The table/view 'DbJobTracking.dbo.TblCompanies' does not have a pr
           <Property Name="GiveTask" Type="int" />
           <Property Name="GetTask" Type="int" />
           <Property Name="Satement" Type="nvarchar" MaxLength="500" />
-          <Property Name="Status" Type="nvarchar" MaxLength="20" />
+          <Property Name="Status" Type="bit" />
           <Property Name="Dates" Type="date" />
         </EntityType>
         <EntityType Name="TblTaskDetail">
@@ -79,30 +79,6 @@ warning 6002: The table/view 'DbJobTracking.dbo.TblCompanies' does not have a pr
             </Principal>
             <Dependent Role="TblEmployee">
               <PropertyRef Name="Department" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TblTask_TblEmployee">
-          <End Role="TblEmployee" Type="Self.TblEmployee" Multiplicity="0..1" />
-          <End Role="TblTask" Type="Self.TblTask" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TblEmployee">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TblTask">
-              <PropertyRef Name="GiveTask" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TblTask_TblEmployee1">
-          <End Role="TblEmployee" Type="Self.TblEmployee" Multiplicity="0..1" />
-          <End Role="TblTask" Type="Self.TblTask" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TblEmployee">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TblTask">
-              <PropertyRef Name="GetTask" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -140,14 +116,6 @@ warning 6002: The table/view 'DbJobTracking.dbo.TblCompanies' does not have a pr
           <AssociationSet Name="FK_TblEmployee_TblDepartments" Association="Self.FK_TblEmployee_TblDepartments">
             <End Role="TblDepartments" EntitySet="TblDepartments" />
             <End Role="TblEmployee" EntitySet="TblEmployee" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TblTask_TblEmployee" Association="Self.FK_TblTask_TblEmployee">
-            <End Role="TblEmployee" EntitySet="TblEmployee" />
-            <End Role="TblTask" EntitySet="TblTask" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TblTask_TblEmployee1" Association="Self.FK_TblTask_TblEmployee1">
-            <End Role="TblEmployee" EntitySet="TblEmployee" />
-            <End Role="TblTask" EntitySet="TblTask" />
           </AssociationSet>
           <AssociationSet Name="FK_TblTaskDetail_TblTask" Association="Self.FK_TblTaskDetail_TblTask">
             <End Role="TblTask" EntitySet="TblTask" />
@@ -198,7 +166,7 @@ warning 6002: The table/view 'DbJobTracking.dbo.TblCompanies' does not have a pr
           <Property Name="GiveTask" Type="Int32" />
           <Property Name="GetTask" Type="Int32" />
           <Property Name="Satement" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
           <Property Name="Dates" Type="DateTime" Precision="0" />
           <NavigationProperty Name="TblEmployee" Relationship="Self.FK_TblTask_TblEmployee" FromRole="TblTask" ToRole="TblEmployee" />
           <NavigationProperty Name="TblEmployee1" Relationship="Self.FK_TblTask_TblEmployee1" FromRole="TblTask" ToRole="TblEmployee" />

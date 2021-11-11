@@ -29,19 +29,19 @@ namespace JobTrackingProject.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.LblTotalDepartment = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.LblPassiveTask = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.LblActiveTask = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -50,8 +50,8 @@ namespace JobTrackingProject.Forms
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -66,7 +66,7 @@ namespace JobTrackingProject.Forms
             // 
             this.panelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(123)))), ((int)(((byte)(200)))));
             this.panelControl1.Appearance.Options.UseBackColor = true;
-            this.panelControl1.Controls.Add(this.labelControl4);
+            this.panelControl1.Controls.Add(this.LblTotalDepartment);
             this.panelControl1.Controls.Add(this.pictureBox1);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Location = new System.Drawing.Point(349, 0);
@@ -76,17 +76,17 @@ namespace JobTrackingProject.Forms
             this.panelControl1.Size = new System.Drawing.Size(200, 100);
             this.panelControl1.TabIndex = 6;
             // 
-            // labelControl4
+            // LblTotalDepartment
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl4.Appearance.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Appearance.Options.UseForeColor = true;
-            this.labelControl4.Location = new System.Drawing.Point(84, 41);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(17, 29);
-            this.labelControl4.TabIndex = 3;
-            this.labelControl4.Text = "0";
+            this.LblTotalDepartment.Appearance.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblTotalDepartment.Appearance.ForeColor = System.Drawing.SystemColors.Window;
+            this.LblTotalDepartment.Appearance.Options.UseFont = true;
+            this.LblTotalDepartment.Appearance.Options.UseForeColor = true;
+            this.LblTotalDepartment.Location = new System.Drawing.Point(84, 41);
+            this.LblTotalDepartment.Name = "LblTotalDepartment";
+            this.LblTotalDepartment.Size = new System.Drawing.Size(17, 29);
+            this.LblTotalDepartment.TabIndex = 3;
+            this.LblTotalDepartment.Text = "0";
             // 
             // pictureBox1
             // 
@@ -111,12 +111,10 @@ namespace JobTrackingProject.Forms
             // 
             // chartControl1
             // 
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Location = new System.Drawing.Point(349, 106);
             this.chartControl1.Name = "chartControl1";
-            series1.Name = "Series 1";
+            series1.Name = "State1";
+            series1.View = pieSeriesView1;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
             this.chartControl1.Size = new System.Drawing.Size(612, 219);
@@ -126,7 +124,7 @@ namespace JobTrackingProject.Forms
             // 
             this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(167)))), ((int)(((byte)(255)))));
             this.panelControl2.Appearance.Options.UseBackColor = true;
-            this.panelControl2.Controls.Add(this.labelControl5);
+            this.panelControl2.Controls.Add(this.LblPassiveTask);
             this.panelControl2.Controls.Add(this.pictureBox3);
             this.panelControl2.Controls.Add(this.labelControl6);
             this.panelControl2.Location = new System.Drawing.Point(761, 0);
@@ -136,17 +134,17 @@ namespace JobTrackingProject.Forms
             this.panelControl2.Size = new System.Drawing.Size(200, 100);
             this.panelControl2.TabIndex = 7;
             // 
-            // labelControl5
+            // LblPassiveTask
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl5.Appearance.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Appearance.Options.UseForeColor = true;
-            this.labelControl5.Location = new System.Drawing.Point(93, 41);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(17, 29);
-            this.labelControl5.TabIndex = 7;
-            this.labelControl5.Text = "0";
+            this.LblPassiveTask.Appearance.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblPassiveTask.Appearance.ForeColor = System.Drawing.SystemColors.Window;
+            this.LblPassiveTask.Appearance.Options.UseFont = true;
+            this.LblPassiveTask.Appearance.Options.UseForeColor = true;
+            this.LblPassiveTask.Location = new System.Drawing.Point(93, 41);
+            this.LblPassiveTask.Name = "LblPassiveTask";
+            this.LblPassiveTask.Size = new System.Drawing.Size(17, 29);
+            this.LblPassiveTask.TabIndex = 7;
+            this.LblPassiveTask.Text = "0";
             // 
             // pictureBox3
             // 
@@ -173,7 +171,7 @@ namespace JobTrackingProject.Forms
             // 
             this.panelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(148)))), ((int)(((byte)(242)))));
             this.panelControl3.Appearance.Options.UseBackColor = true;
-            this.panelControl3.Controls.Add(this.labelControl2);
+            this.panelControl3.Controls.Add(this.LblActiveTask);
             this.panelControl3.Controls.Add(this.pictureBox2);
             this.panelControl3.Controls.Add(this.labelControl3);
             this.panelControl3.Location = new System.Drawing.Point(555, 0);
@@ -183,18 +181,18 @@ namespace JobTrackingProject.Forms
             this.panelControl3.Size = new System.Drawing.Size(200, 100);
             this.panelControl3.TabIndex = 7;
             // 
-            // labelControl2
+            // LblActiveTask
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl2.Appearance.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(93, 41);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(17, 29);
-            this.labelControl2.TabIndex = 5;
-            this.labelControl2.Text = "0";
-            this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
+            this.LblActiveTask.Appearance.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblActiveTask.Appearance.ForeColor = System.Drawing.SystemColors.Window;
+            this.LblActiveTask.Appearance.Options.UseFont = true;
+            this.LblActiveTask.Appearance.Options.UseForeColor = true;
+            this.LblActiveTask.Location = new System.Drawing.Point(93, 41);
+            this.LblActiveTask.Name = "LblActiveTask";
+            this.LblActiveTask.Size = new System.Drawing.Size(17, 29);
+            this.LblActiveTask.TabIndex = 5;
+            this.LblActiveTask.Text = "0";
+            this.LblActiveTask.Click += new System.EventHandler(this.labelControl2_Click);
             // 
             // pictureBox2
             // 
@@ -251,7 +249,7 @@ namespace JobTrackingProject.Forms
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -276,13 +274,13 @@ namespace JobTrackingProject.Forms
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl LblTotalDepartment;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl LblActiveTask;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl LblPassiveTask;
         private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }
