@@ -44,7 +44,7 @@ namespace JobTrackingProject
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.BtnTaskList = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnDefineNewTask = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
@@ -100,7 +100,7 @@ namespace JobTrackingProject
             this.barButtonItem9,
             this.barButtonItem10,
             this.BtnTaskList,
-            this.barButtonItem12,
+            this.BtnDefineNewTask,
             this.barButtonItem13,
             this.barButtonItem14,
             this.barButtonItem15,
@@ -221,18 +221,19 @@ namespace JobTrackingProject
             // 
             this.BtnTaskList.Caption = "Görev Listesi";
             this.BtnTaskList.Id = 12;
-            this.BtnTaskList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
-            this.BtnTaskList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
+            this.BtnTaskList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnTaskList.ImageOptions.Image")));
+            this.BtnTaskList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnTaskList.ImageOptions.LargeImage")));
             this.BtnTaskList.Name = "BtnTaskList";
             this.BtnTaskList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnTaskList_ItemClick);
             // 
-            // barButtonItem12
+            // BtnDefineNewTask
             // 
-            this.barButtonItem12.Caption = "Yeni Görev Tanımla";
-            this.barButtonItem12.Id = 13;
-            this.barButtonItem12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.Image")));
-            this.barButtonItem12.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.LargeImage")));
-            this.barButtonItem12.Name = "barButtonItem12";
+            this.BtnDefineNewTask.Caption = "Yeni Görev Tanımla";
+            this.BtnDefineNewTask.Id = 13;
+            this.BtnDefineNewTask.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.Image")));
+            this.BtnDefineNewTask.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.LargeImage")));
+            this.BtnDefineNewTask.Name = "BtnDefineNewTask";
+            this.BtnDefineNewTask.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDefineNewTask_ItemClick);
             // 
             // barButtonItem13
             // 
@@ -413,7 +414,7 @@ namespace JobTrackingProject
             // ribbonPageGroup8
             // 
             this.ribbonPageGroup8.ItemLinks.Add(this.BtnTaskList);
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem12);
+            this.ribbonPageGroup8.ItemLinks.Add(this.BtnDefineNewTask);
             this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem14);
             this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem15);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
@@ -504,7 +505,7 @@ namespace JobTrackingProject
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.BarButtonItem BtnTaskList;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
+        private DevExpress.XtraBars.BarButtonItem BtnDefineNewTask;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
         private DevExpress.XtraBars.BarButtonItem barButtonItem14;
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;

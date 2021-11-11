@@ -50,5 +50,11 @@ namespace JobTrackingProject
             frm4.MdiParent = this;
             frm4.Show();
         }
+
+        private void BtnDefineNewTask_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmTask fr = new Forms.FrmTask();
+            fr.Show();
+        }
     }
 }
