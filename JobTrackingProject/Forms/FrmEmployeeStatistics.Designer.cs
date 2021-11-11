@@ -30,42 +30,42 @@ namespace JobTrackingProject.Forms
         private void InitializeComponent()
         {
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.LblTotalEmployee = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.LblLastTaskDetails = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.LblEndTask = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.LblTotalDepartment = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.LblCompany = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.LblSector = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.LblEmployeeOfTheMonth = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.LblCityOfWork = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.LblActiveJobs = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.LblDepartmentsOfTheMonth = new DevExpress.XtraEditors.LabelControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl12 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
+            this.LblPassiveJobs = new DevExpress.XtraEditors.LabelControl();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
+            this.LblMissionOpenToday = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -86,10 +86,10 @@ namespace JobTrackingProject.Forms
             this.panelControl9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
             this.panelControl10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
-            this.panelControl11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).BeginInit();
             this.panelControl12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
+            this.panelControl11.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -104,23 +104,23 @@ namespace JobTrackingProject.Forms
             this.labelControl1.Text = "Toplam Personel";
             this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
             // 
-            // labelControl2
+            // LblTotalEmployee
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.LineVisible = true;
-            this.labelControl2.Location = new System.Drawing.Point(106, 43);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(18, 34);
-            this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "0";
-            this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
+            this.LblTotalEmployee.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblTotalEmployee.Appearance.Options.UseFont = true;
+            this.LblTotalEmployee.LineVisible = true;
+            this.LblTotalEmployee.Location = new System.Drawing.Point(106, 43);
+            this.LblTotalEmployee.Name = "LblTotalEmployee";
+            this.LblTotalEmployee.Size = new System.Drawing.Size(18, 34);
+            this.LblTotalEmployee.TabIndex = 1;
+            this.LblTotalEmployee.Text = "0";
+            this.LblTotalEmployee.Click += new System.EventHandler(this.labelControl2_Click);
             // 
             // panelControl1
             // 
             this.panelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(70)))), ((int)(((byte)(197)))));
             this.panelControl1.Appearance.Options.UseBackColor = true;
-            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.LblTotalEmployee);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Location = new System.Drawing.Point(29, 10);
             this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -133,7 +133,7 @@ namespace JobTrackingProject.Forms
             // 
             this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(96)))), ((int)(((byte)(206)))));
             this.panelControl2.Appearance.Options.UseBackColor = true;
-            this.panelControl2.Controls.Add(this.labelControl3);
+            this.panelControl2.Controls.Add(this.LblLastTaskDetails);
             this.panelControl2.Controls.Add(this.labelControl4);
             this.panelControl2.Location = new System.Drawing.Point(29, 116);
             this.panelControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -142,33 +142,33 @@ namespace JobTrackingProject.Forms
             this.panelControl2.Size = new System.Drawing.Size(224, 100);
             this.panelControl2.TabIndex = 2;
             // 
-            // labelControl3
+            // LblLastTaskDetails
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.LineVisible = true;
-            this.labelControl3.Location = new System.Drawing.Point(106, 43);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(18, 34);
-            this.labelControl3.TabIndex = 1;
-            this.labelControl3.Text = "0";
+            this.LblLastTaskDetails.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblLastTaskDetails.Appearance.Options.UseFont = true;
+            this.LblLastTaskDetails.LineVisible = true;
+            this.LblLastTaskDetails.Location = new System.Drawing.Point(106, 43);
+            this.LblLastTaskDetails.Name = "LblLastTaskDetails";
+            this.LblLastTaskDetails.Size = new System.Drawing.Size(18, 34);
+            this.LblLastTaskDetails.TabIndex = 1;
+            this.LblLastTaskDetails.Text = "0";
             // 
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.LineVisible = true;
-            this.labelControl4.Location = new System.Drawing.Point(25, 8);
+            this.labelControl4.Location = new System.Drawing.Point(29, 8);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(165, 25);
+            this.labelControl4.Size = new System.Drawing.Size(160, 25);
             this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "Bugünkü İş Sayısı";
+            this.labelControl4.Text = "Son Görev Detayı";
             // 
             // panelControl3
             // 
             this.panelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(168)))), ((int)(((byte)(222)))));
             this.panelControl3.Appearance.Options.UseBackColor = true;
-            this.panelControl3.Controls.Add(this.labelControl5);
+            this.panelControl3.Controls.Add(this.LblEndTask);
             this.panelControl3.Controls.Add(this.labelControl6);
             this.panelControl3.Location = new System.Drawing.Point(29, 222);
             this.panelControl3.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -177,16 +177,16 @@ namespace JobTrackingProject.Forms
             this.panelControl3.Size = new System.Drawing.Size(224, 100);
             this.panelControl3.TabIndex = 3;
             // 
-            // labelControl5
+            // LblEndTask
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.LineVisible = true;
-            this.labelControl5.Location = new System.Drawing.Point(106, 43);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(18, 34);
-            this.labelControl5.TabIndex = 1;
-            this.labelControl5.Text = "0";
+            this.LblEndTask.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblEndTask.Appearance.Options.UseFont = true;
+            this.LblEndTask.LineVisible = true;
+            this.LblEndTask.Location = new System.Drawing.Point(6, 43);
+            this.LblEndTask.Name = "LblEndTask";
+            this.LblEndTask.Size = new System.Drawing.Size(18, 34);
+            this.LblEndTask.TabIndex = 1;
+            this.LblEndTask.Text = "0";
             // 
             // labelControl6
             // 
@@ -203,7 +203,7 @@ namespace JobTrackingProject.Forms
             // 
             this.panelControl4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(96)))), ((int)(((byte)(206)))));
             this.panelControl4.Appearance.Options.UseBackColor = true;
-            this.panelControl4.Controls.Add(this.labelControl7);
+            this.panelControl4.Controls.Add(this.LblTotalDepartment);
             this.panelControl4.Controls.Add(this.labelControl8);
             this.panelControl4.Location = new System.Drawing.Point(259, 10);
             this.panelControl4.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -212,16 +212,16 @@ namespace JobTrackingProject.Forms
             this.panelControl4.Size = new System.Drawing.Size(224, 100);
             this.panelControl4.TabIndex = 2;
             // 
-            // labelControl7
+            // LblTotalDepartment
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.LineVisible = true;
-            this.labelControl7.Location = new System.Drawing.Point(106, 43);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(18, 34);
-            this.labelControl7.TabIndex = 1;
-            this.labelControl7.Text = "0";
+            this.LblTotalDepartment.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblTotalDepartment.Appearance.Options.UseFont = true;
+            this.LblTotalDepartment.LineVisible = true;
+            this.LblTotalDepartment.Location = new System.Drawing.Point(106, 43);
+            this.LblTotalDepartment.Name = "LblTotalDepartment";
+            this.LblTotalDepartment.Size = new System.Drawing.Size(18, 34);
+            this.LblTotalDepartment.TabIndex = 1;
+            this.LblTotalDepartment.Text = "0";
             // 
             // labelControl8
             // 
@@ -238,7 +238,7 @@ namespace JobTrackingProject.Forms
             // 
             this.panelControl7.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(168)))), ((int)(((byte)(222)))));
             this.panelControl7.Appearance.Options.UseBackColor = true;
-            this.panelControl7.Controls.Add(this.labelControl13);
+            this.panelControl7.Controls.Add(this.LblCompany);
             this.panelControl7.Controls.Add(this.labelControl25);
             this.panelControl7.Controls.Add(this.labelControl14);
             this.panelControl7.Location = new System.Drawing.Point(259, 116);
@@ -248,16 +248,27 @@ namespace JobTrackingProject.Forms
             this.panelControl7.Size = new System.Drawing.Size(224, 100);
             this.panelControl7.TabIndex = 3;
             // 
-            // labelControl13
+            // LblCompany
             // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.LineVisible = true;
-            this.labelControl13.Location = new System.Drawing.Point(106, 43);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(18, 34);
-            this.labelControl13.TabIndex = 1;
-            this.labelControl13.Text = "0";
+            this.LblCompany.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblCompany.Appearance.Options.UseFont = true;
+            this.LblCompany.LineVisible = true;
+            this.LblCompany.Location = new System.Drawing.Point(106, 43);
+            this.LblCompany.Name = "LblCompany";
+            this.LblCompany.Size = new System.Drawing.Size(18, 34);
+            this.LblCompany.TabIndex = 1;
+            this.LblCompany.Text = "0";
+            // 
+            // labelControl25
+            // 
+            this.labelControl25.Appearance.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl25.Appearance.Options.UseFont = true;
+            this.labelControl25.LineVisible = true;
+            this.labelControl25.Location = new System.Drawing.Point(371, 12);
+            this.labelControl25.Name = "labelControl25";
+            this.labelControl25.Size = new System.Drawing.Size(218, 25);
+            this.labelControl25.TabIndex = 0;
+            this.labelControl25.Text = "Maksimum Departman";
             // 
             // labelControl14
             // 
@@ -274,7 +285,7 @@ namespace JobTrackingProject.Forms
             // 
             this.panelControl5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(207)))), ((int)(((byte)(225)))));
             this.panelControl5.Appearance.Options.UseBackColor = true;
-            this.panelControl5.Controls.Add(this.labelControl9);
+            this.panelControl5.Controls.Add(this.LblSector);
             this.panelControl5.Controls.Add(this.labelControl10);
             this.panelControl5.Location = new System.Drawing.Point(259, 222);
             this.panelControl5.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -283,16 +294,16 @@ namespace JobTrackingProject.Forms
             this.panelControl5.Size = new System.Drawing.Size(224, 100);
             this.panelControl5.TabIndex = 4;
             // 
-            // labelControl9
+            // LblSector
             // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.LineVisible = true;
-            this.labelControl9.Location = new System.Drawing.Point(106, 43);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(18, 34);
-            this.labelControl9.TabIndex = 1;
-            this.labelControl9.Text = "0";
+            this.LblSector.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblSector.Appearance.Options.UseFont = true;
+            this.LblSector.LineVisible = true;
+            this.LblSector.Location = new System.Drawing.Point(106, 43);
+            this.LblSector.Name = "LblSector";
+            this.LblSector.Size = new System.Drawing.Size(18, 34);
+            this.LblSector.TabIndex = 1;
+            this.LblSector.Text = "0";
             // 
             // labelControl10
             // 
@@ -309,7 +320,7 @@ namespace JobTrackingProject.Forms
             // 
             this.panelControl6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(239)))), ((int)(((byte)(221)))));
             this.panelControl6.Appearance.Options.UseBackColor = true;
-            this.panelControl6.Controls.Add(this.labelControl11);
+            this.panelControl6.Controls.Add(this.LblEmployeeOfTheMonth);
             this.panelControl6.Controls.Add(this.labelControl12);
             this.panelControl6.Location = new System.Drawing.Point(489, 222);
             this.panelControl6.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -318,16 +329,16 @@ namespace JobTrackingProject.Forms
             this.panelControl6.Size = new System.Drawing.Size(224, 100);
             this.panelControl6.TabIndex = 7;
             // 
-            // labelControl11
+            // LblEmployeeOfTheMonth
             // 
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.LineVisible = true;
-            this.labelControl11.Location = new System.Drawing.Point(106, 43);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(18, 34);
-            this.labelControl11.TabIndex = 1;
-            this.labelControl11.Text = "0";
+            this.LblEmployeeOfTheMonth.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblEmployeeOfTheMonth.Appearance.Options.UseFont = true;
+            this.LblEmployeeOfTheMonth.LineVisible = true;
+            this.LblEmployeeOfTheMonth.Location = new System.Drawing.Point(25, 43);
+            this.LblEmployeeOfTheMonth.Name = "LblEmployeeOfTheMonth";
+            this.LblEmployeeOfTheMonth.Size = new System.Drawing.Size(18, 34);
+            this.LblEmployeeOfTheMonth.TabIndex = 1;
+            this.LblEmployeeOfTheMonth.Text = "0";
             // 
             // labelControl12
             // 
@@ -344,7 +355,7 @@ namespace JobTrackingProject.Forms
             // 
             this.panelControl8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(207)))), ((int)(((byte)(225)))));
             this.panelControl8.Appearance.Options.UseBackColor = true;
-            this.panelControl8.Controls.Add(this.labelControl15);
+            this.panelControl8.Controls.Add(this.LblCityOfWork);
             this.panelControl8.Controls.Add(this.labelControl16);
             this.panelControl8.Location = new System.Drawing.Point(489, 116);
             this.panelControl8.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -353,16 +364,16 @@ namespace JobTrackingProject.Forms
             this.panelControl8.Size = new System.Drawing.Size(224, 100);
             this.panelControl8.TabIndex = 6;
             // 
-            // labelControl15
+            // LblCityOfWork
             // 
-            this.labelControl15.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.LineVisible = true;
-            this.labelControl15.Location = new System.Drawing.Point(106, 43);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(18, 34);
-            this.labelControl15.TabIndex = 1;
-            this.labelControl15.Text = "0";
+            this.LblCityOfWork.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblCityOfWork.Appearance.Options.UseFont = true;
+            this.LblCityOfWork.LineVisible = true;
+            this.LblCityOfWork.Location = new System.Drawing.Point(106, 43);
+            this.LblCityOfWork.Name = "LblCityOfWork";
+            this.LblCityOfWork.Size = new System.Drawing.Size(18, 34);
+            this.LblCityOfWork.TabIndex = 1;
+            this.LblCityOfWork.Text = "0";
             // 
             // labelControl16
             // 
@@ -379,7 +390,7 @@ namespace JobTrackingProject.Forms
             // 
             this.panelControl9.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(168)))), ((int)(((byte)(222)))));
             this.panelControl9.Appearance.Options.UseBackColor = true;
-            this.panelControl9.Controls.Add(this.labelControl17);
+            this.panelControl9.Controls.Add(this.LblActiveJobs);
             this.panelControl9.Controls.Add(this.labelControl18);
             this.panelControl9.Location = new System.Drawing.Point(489, 10);
             this.panelControl9.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -388,16 +399,16 @@ namespace JobTrackingProject.Forms
             this.panelControl9.Size = new System.Drawing.Size(224, 100);
             this.panelControl9.TabIndex = 5;
             // 
-            // labelControl17
+            // LblActiveJobs
             // 
-            this.labelControl17.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.LineVisible = true;
-            this.labelControl17.Location = new System.Drawing.Point(106, 43);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(18, 34);
-            this.labelControl17.TabIndex = 1;
-            this.labelControl17.Text = "0";
+            this.LblActiveJobs.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblActiveJobs.Appearance.Options.UseFont = true;
+            this.LblActiveJobs.LineVisible = true;
+            this.LblActiveJobs.Location = new System.Drawing.Point(106, 43);
+            this.LblActiveJobs.Name = "LblActiveJobs";
+            this.LblActiveJobs.Size = new System.Drawing.Size(18, 34);
+            this.LblActiveJobs.TabIndex = 1;
+            this.LblActiveJobs.Text = "0";
             // 
             // labelControl18
             // 
@@ -414,7 +425,7 @@ namespace JobTrackingProject.Forms
             // 
             this.panelControl10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(219)))));
             this.panelControl10.Appearance.Options.UseBackColor = true;
-            this.panelControl10.Controls.Add(this.labelControl19);
+            this.panelControl10.Controls.Add(this.LblDepartmentsOfTheMonth);
             this.panelControl10.Controls.Add(this.labelControl20);
             this.panelControl10.Location = new System.Drawing.Point(719, 222);
             this.panelControl10.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -423,16 +434,16 @@ namespace JobTrackingProject.Forms
             this.panelControl10.Size = new System.Drawing.Size(224, 100);
             this.panelControl10.TabIndex = 10;
             // 
-            // labelControl19
+            // LblDepartmentsOfTheMonth
             // 
-            this.labelControl19.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl19.Appearance.Options.UseFont = true;
-            this.labelControl19.LineVisible = true;
-            this.labelControl19.Location = new System.Drawing.Point(102, 43);
-            this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(18, 34);
-            this.labelControl19.TabIndex = 1;
-            this.labelControl19.Text = "0";
+            this.LblDepartmentsOfTheMonth.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblDepartmentsOfTheMonth.Appearance.Options.UseFont = true;
+            this.LblDepartmentsOfTheMonth.LineVisible = true;
+            this.LblDepartmentsOfTheMonth.Location = new System.Drawing.Point(72, 44);
+            this.LblDepartmentsOfTheMonth.Name = "LblDepartmentsOfTheMonth";
+            this.LblDepartmentsOfTheMonth.Size = new System.Drawing.Size(18, 34);
+            this.LblDepartmentsOfTheMonth.TabIndex = 1;
+            this.LblDepartmentsOfTheMonth.Text = "0";
             // 
             // labelControl20
             // 
@@ -445,46 +456,11 @@ namespace JobTrackingProject.Forms
             this.labelControl20.TabIndex = 0;
             this.labelControl20.Text = "Ayın Departmanı";
             // 
-            // panelControl11
-            // 
-            this.panelControl11.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(239)))), ((int)(((byte)(221)))));
-            this.panelControl11.Appearance.Options.UseBackColor = true;
-            this.panelControl11.Controls.Add(this.labelControl21);
-            this.panelControl11.Controls.Add(this.labelControl22);
-            this.panelControl11.Location = new System.Drawing.Point(719, 116);
-            this.panelControl11.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
-            this.panelControl11.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl11.Name = "panelControl11";
-            this.panelControl11.Size = new System.Drawing.Size(224, 100);
-            this.panelControl11.TabIndex = 9;
-            // 
-            // labelControl21
-            // 
-            this.labelControl21.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl21.Appearance.Options.UseFont = true;
-            this.labelControl21.LineVisible = true;
-            this.labelControl21.Location = new System.Drawing.Point(102, 43);
-            this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(18, 34);
-            this.labelControl21.TabIndex = 1;
-            this.labelControl21.Text = "0";
-            // 
-            // labelControl22
-            // 
-            this.labelControl22.Appearance.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl22.Appearance.Options.UseFont = true;
-            this.labelControl22.LineVisible = true;
-            this.labelControl22.Location = new System.Drawing.Point(3, 8);
-            this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(218, 25);
-            this.labelControl22.TabIndex = 0;
-            this.labelControl22.Text = "Maksimum Departman";
-            // 
             // panelControl12
             // 
             this.panelControl12.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(207)))), ((int)(((byte)(225)))));
             this.panelControl12.Appearance.Options.UseBackColor = true;
-            this.panelControl12.Controls.Add(this.labelControl23);
+            this.panelControl12.Controls.Add(this.LblPassiveJobs);
             this.panelControl12.Controls.Add(this.labelControl24);
             this.panelControl12.Location = new System.Drawing.Point(719, 10);
             this.panelControl12.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -493,16 +469,16 @@ namespace JobTrackingProject.Forms
             this.panelControl12.Size = new System.Drawing.Size(224, 100);
             this.panelControl12.TabIndex = 8;
             // 
-            // labelControl23
+            // LblPassiveJobs
             // 
-            this.labelControl23.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl23.Appearance.Options.UseFont = true;
-            this.labelControl23.LineVisible = true;
-            this.labelControl23.Location = new System.Drawing.Point(102, 43);
-            this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(18, 34);
-            this.labelControl23.TabIndex = 1;
-            this.labelControl23.Text = "0";
+            this.LblPassiveJobs.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblPassiveJobs.Appearance.Options.UseFont = true;
+            this.LblPassiveJobs.LineVisible = true;
+            this.LblPassiveJobs.Location = new System.Drawing.Point(102, 43);
+            this.LblPassiveJobs.Name = "LblPassiveJobs";
+            this.LblPassiveJobs.Size = new System.Drawing.Size(18, 34);
+            this.LblPassiveJobs.TabIndex = 1;
+            this.LblPassiveJobs.Text = "0";
             // 
             // labelControl24
             // 
@@ -515,16 +491,40 @@ namespace JobTrackingProject.Forms
             this.labelControl24.TabIndex = 0;
             this.labelControl24.Text = "Pasif İş Sayısı";
             // 
-            // labelControl25
+            // labelControl22
             // 
-            this.labelControl25.Appearance.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl25.Appearance.Options.UseFont = true;
-            this.labelControl25.LineVisible = true;
-            this.labelControl25.Location = new System.Drawing.Point(371, 12);
-            this.labelControl25.Name = "labelControl25";
-            this.labelControl25.Size = new System.Drawing.Size(218, 25);
-            this.labelControl25.TabIndex = 0;
-            this.labelControl25.Text = "Maksimum Departman";
+            this.labelControl22.Appearance.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl22.Appearance.Options.UseFont = true;
+            this.labelControl22.LineVisible = true;
+            this.labelControl22.Location = new System.Drawing.Point(3, 8);
+            this.labelControl22.Name = "labelControl22";
+            this.labelControl22.Size = new System.Drawing.Size(210, 25);
+            this.labelControl22.TabIndex = 0;
+            this.labelControl22.Text = "Bugün Açılan Görevler";
+            // 
+            // LblMissionOpenToday
+            // 
+            this.LblMissionOpenToday.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblMissionOpenToday.Appearance.Options.UseFont = true;
+            this.LblMissionOpenToday.LineVisible = true;
+            this.LblMissionOpenToday.Location = new System.Drawing.Point(102, 43);
+            this.LblMissionOpenToday.Name = "LblMissionOpenToday";
+            this.LblMissionOpenToday.Size = new System.Drawing.Size(18, 34);
+            this.LblMissionOpenToday.TabIndex = 1;
+            this.LblMissionOpenToday.Text = "0";
+            // 
+            // panelControl11
+            // 
+            this.panelControl11.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(239)))), ((int)(((byte)(221)))));
+            this.panelControl11.Appearance.Options.UseBackColor = true;
+            this.panelControl11.Controls.Add(this.LblMissionOpenToday);
+            this.panelControl11.Controls.Add(this.labelControl22);
+            this.panelControl11.Location = new System.Drawing.Point(719, 116);
+            this.panelControl11.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.panelControl11.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.panelControl11.Name = "panelControl11";
+            this.panelControl11.Size = new System.Drawing.Size(224, 100);
+            this.panelControl11.TabIndex = 9;
             // 
             // FrmEmployeeStatistics
             // 
@@ -545,6 +545,7 @@ namespace JobTrackingProject.Forms
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmEmployeeStatistics";
             this.Text = "Personel İstatistikleri";
+            this.Load += new System.EventHandler(this.FrmEmployeeStatistics_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -575,12 +576,12 @@ namespace JobTrackingProject.Forms
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
             this.panelControl10.ResumeLayout(false);
             this.panelControl10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
-            this.panelControl11.ResumeLayout(false);
-            this.panelControl11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).EndInit();
             this.panelControl12.ResumeLayout(false);
             this.panelControl12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
+            this.panelControl11.ResumeLayout(false);
+            this.panelControl11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -588,41 +589,41 @@ namespace JobTrackingProject.Forms
         #endregion
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl LblTotalEmployee;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl LblLastTaskDetails;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl LblEndTask;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.PanelControl panelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl LblTotalDepartment;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.PanelControl panelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.LabelControl LblCompany;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.PanelControl panelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.LabelControl LblSector;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.PanelControl panelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.LabelControl LblEmployeeOfTheMonth;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.PanelControl panelControl8;
-        private DevExpress.XtraEditors.LabelControl labelControl15;
+        private DevExpress.XtraEditors.LabelControl LblCityOfWork;
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.PanelControl panelControl9;
-        private DevExpress.XtraEditors.LabelControl labelControl17;
+        private DevExpress.XtraEditors.LabelControl LblActiveJobs;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.PanelControl panelControl10;
-        private DevExpress.XtraEditors.LabelControl labelControl19;
+        private DevExpress.XtraEditors.LabelControl LblDepartmentsOfTheMonth;
         private DevExpress.XtraEditors.LabelControl labelControl20;
-        private DevExpress.XtraEditors.PanelControl panelControl11;
-        private DevExpress.XtraEditors.LabelControl labelControl21;
-        private DevExpress.XtraEditors.LabelControl labelControl22;
         private DevExpress.XtraEditors.PanelControl panelControl12;
-        private DevExpress.XtraEditors.LabelControl labelControl23;
+        private DevExpress.XtraEditors.LabelControl LblPassiveJobs;
         private DevExpress.XtraEditors.LabelControl labelControl24;
         private DevExpress.XtraEditors.LabelControl labelControl25;
+        private DevExpress.XtraEditors.LabelControl labelControl22;
+        private DevExpress.XtraEditors.LabelControl LblMissionOpenToday;
+        private DevExpress.XtraEditors.PanelControl panelControl11;
     }
 }
