@@ -25,5 +25,16 @@ namespace JobTrackingProject.Forms
             db.TblTaskDetail.Load();
             bindingSource1.DataSource = db.TblTaskDetail.Local;
         }
+
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            db.SaveChanges();
+        }
+
+        private void görevDetayıSilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bindingSource1.RemoveCurrent();
+            db.SaveChanges();
+        }
     }
 }
