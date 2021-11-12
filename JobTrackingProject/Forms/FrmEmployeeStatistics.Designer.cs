@@ -334,7 +334,7 @@ namespace JobTrackingProject.Forms
             this.LblEmployeeOfTheMonth.Appearance.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.LblEmployeeOfTheMonth.Appearance.Options.UseFont = true;
             this.LblEmployeeOfTheMonth.LineVisible = true;
-            this.LblEmployeeOfTheMonth.Location = new System.Drawing.Point(25, 43);
+            this.LblEmployeeOfTheMonth.Location = new System.Drawing.Point(6, 43);
             this.LblEmployeeOfTheMonth.Name = "LblEmployeeOfTheMonth";
             this.LblEmployeeOfTheMonth.Size = new System.Drawing.Size(18, 34);
             this.LblEmployeeOfTheMonth.TabIndex = 1;

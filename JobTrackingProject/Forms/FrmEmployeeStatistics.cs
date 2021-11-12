@@ -49,7 +49,7 @@ namespace JobTrackingProject.Forms
                 OrderByDescending(z => z.Count()).
                 Select(y=>y.Key).FirstOrDefault();
             LblEmployeeOfTheMonth.Text = db.TblEmployee.Where(x => x.ID == d1).
-                Select(y => y.Name+""+ y.Surname).FirstOrDefault().ToString();
+                Select(y => y.Name+" "+ y.Surname).FirstOrDefault().ToString();
 
             LblDepartmentsOfTheMonth.Text = db.TblDepartments.Where(x => x.ID == db.TblEmployee.Where(t=>t.ID == d1).Select(z=>z.Department)
                 .FirstOrDefault()).Select(y => y.Name).FirstOrDefault()

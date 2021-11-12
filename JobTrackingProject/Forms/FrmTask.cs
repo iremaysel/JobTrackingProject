@@ -25,10 +25,10 @@ namespace JobTrackingProject.Forms
                 select new
                 {
                     x.ID,
-                    x.Name
+                    AdSoyad = x.Name +" "+ x.Surname
                 }).ToList();
             LueGetTask.Properties.ValueMember = "ID";
-            LueGetTask.Properties.DisplayMember = "Name";
+            LueGetTask.Properties.DisplayMember = "AdSoyad";
             LueGetTask.Properties.DataSource = values;
         }
 

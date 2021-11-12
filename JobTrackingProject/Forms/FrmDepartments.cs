@@ -26,7 +26,7 @@ namespace JobTrackingProject.Forms
                           select new
                           {
                               x.ID,
-                              x.Name
+                              Departmanlar = x.Name
                           }).ToList();
             gridControl1.DataSource = values;
 
@@ -96,7 +96,7 @@ namespace JobTrackingProject.Forms
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             TxtID.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
-            TxtName.Text = gridView1.GetFocusedRowCellValue("Name").ToString();
+            TxtName.Text = gridView1.GetFocusedRowCellValue("Departmanlar").ToString();
         }
 
         private void labelControl1_Click(object sender, EventArgs e)

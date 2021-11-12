@@ -27,14 +27,14 @@ namespace JobTrackingProject.Forms
                          select new
                          {
                              x.ID,
-                             x.Name,
-                             x.Surname,
-                             x.Email,
-                             x.Image,
-                             departments = x.TblDepartments.Name,
-                             x.Status
+                             Ad = x.Name,
+                             Soyad = x.Surname,
+                             Mail = x.Email,
+                             Resim = x.Image,
+                             Departman = x.TblDepartments.Name,
+                             Durum = x.Status
                          };
-            gridControl1.DataSource = values.Where(x=>x.Status == true).ToList();
+            gridControl1.DataSource = values.Where(x=>x.Durum == true).ToList();
 
         }
         private void FrmEmployees_Load(object sender, EventArgs e)
@@ -44,10 +44,10 @@ namespace JobTrackingProject.Forms
                 select new
                 {
                     x.ID,
-                    x.Name
+                    Ad = x.Name
                 }).ToList();
             departmentNames.Properties.ValueMember = "ID";
-            departmentNames.Properties.DisplayMember = "Name";
+            departmentNames.Properties.DisplayMember = "Ad";
             departmentNames.Properties.DataSource = departments;
         }
 
@@ -123,11 +123,11 @@ namespace JobTrackingProject.Forms
             DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             TxtID.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
-            TxtName.Text = gridView1.GetFocusedRowCellValue("Name").ToString();
-            TxtSurname.Text = gridView1.GetFocusedRowCellValue("Surname").ToString();
-            TxtEmail.Text = gridView1.GetFocusedRowCellValue("Email").ToString();
-            TxtImage.Text = gridView1.GetFocusedRowCellValue("Image").ToString();
-            departmentNames.Text = gridView1.GetFocusedRowCellValue("departments").ToString();
+            TxtName.Text = gridView1.GetFocusedRowCellValue("Ad").ToString();
+            TxtSurname.Text = gridView1.GetFocusedRowCellValue("Soyad").ToString();
+            TxtEmail.Text = gridView1.GetFocusedRowCellValue("Mail").ToString();
+            TxtImage.Text = gridView1.GetFocusedRowCellValue("Resim").ToString();
+            departmentNames.Text = gridView1.GetFocusedRowCellValue("Departman").ToString();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

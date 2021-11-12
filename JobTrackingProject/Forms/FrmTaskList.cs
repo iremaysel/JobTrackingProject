@@ -24,7 +24,7 @@ namespace JobTrackingProject.Forms
             gridControl1.DataSource = (from x in db.TblTask
                 select new
                 {
-                    x.Satement
+                    Açıklama = x.Satement
                 }).ToList();
 
             LblActiveTask.Text = db.TblTask.Where(x => x.Status == true).Count().ToString();
