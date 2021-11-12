@@ -204,6 +204,15 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8_puzzle.ico" />
+    <None Include="Resources\icons8_star.ico" />
+    <None Include="Resources\icons8_city_buildings_1.ico" />
+    <None Include="Resources\icons8_management.ico" />
+    <None Include="Resources\icons8_company.ico" />
+    <None Include="Resources\icons8_department.ico" />
+    <None Include="Resources\icons8_task.ico" />
+    <None Include="Resources\icons8_time_machine.ico" />
+    <None Include="Resources\icons8_sigma.ico" />
     <None Include="Resources\icons8_system_report.ico" />
     <None Include="Resources\icons8_system_information.ico" />
     <None Include="Resources\icons8_chart_2.ico" />

@@ -35,8 +35,6 @@ namespace JobTrackingProject.Forms
             LblCompany.Text = db.TblCompanies.Count().ToString();
             LblTotalEmployee.Text = db.TblEmployee.Count().ToString();
 
-            LblActiveJobs.Text = db.TblTask.Count(x => x.Status == true).ToString();
-            LblPassiveJobs.Text = db.TblTask.Count(x => x.Status == false).ToString();
             LblEndTask.Text = db.TblTask.OrderByDescending(x=>x.ID).Select(x => x.Satement).FirstOrDefault();
 
             LblCityOfWork.Text = db.TblCompanies.Select(x => x.Province).Distinct().Count().ToString();
@@ -55,8 +53,33 @@ namespace JobTrackingProject.Forms
                 .FirstOrDefault()).Select(y => y.Name).FirstOrDefault()
                 .ToString();
 
-            LblLastTaskDetails.Text = db.TblTask.OrderByDescending(x => x.ID).Select(x => x.Dates)
+            LblLastTaskDetails.Text = db.TblTask.OrderByDescending(x => x.ID).Select(x => x.Dates.ToString())
                 .FirstOrDefault().ToString();
+
+        }
+
+        private void LblMissionOpenToday_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblSector_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblTotalDepartment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblCompany_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblLastTaskDetails_Click(object sender, EventArgs e)
+        {
 
         }
     }
