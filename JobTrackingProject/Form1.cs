@@ -23,32 +23,65 @@ namespace JobTrackingProject
 
         }
 
+        Forms.FrmDepartments frm;
         private void btnDepartmentList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.FrmDepartments frm = new Forms.FrmDepartments();
-            frm.MdiParent = this;
-            frm.Show();
+            if (Application.OpenForms["FrmDepartments"] == null)
+            {
+                frm = new Forms.FrmDepartments();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                Application.OpenForms["FrmDepartments"].Activate();
+            }
+            
         }
 
+        Forms.FrmEmployees frm2;
         private void BtnEmployeeList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.FrmEmployees frm2 = new FrmEmployees();
-            frm2.MdiParent = this;
-            frm2.Show();
+            if (Application.OpenForms["FrmEmployees"] == null)
+            {
+                frm2 = new FrmEmployees();
+                frm2.MdiParent = this;
+                frm2.Show();
+            }
+            else
+            {
+                Application.OpenForms["FrmEmployees"].Activate();
+            }
         }
 
+        Forms.FrmEmployeeStatistics frm3;
         private void BtnEmployeeStatistics_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.FrmEmployeeStatistics frm3 = new FrmEmployeeStatistics();
-            frm3.MdiParent = this;
-            frm3.Show();
+            if (Application.OpenForms["FrmEmployeeStatistics"] == null)
+            {
+                frm3 = new FrmEmployeeStatistics();
+                frm3.MdiParent = this;
+                frm3.Show();
+            }
+            else
+            {
+                Application.OpenForms["FrmEmployeeStatistics"].Activate();
+            }
         }
 
+        Forms.FrmTaskList frm4;
         private void BtnTaskList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.FrmTaskList frm4 = new FrmTaskList();
-            frm4.MdiParent = this;
-            frm4.Show();
+            if (Application.OpenForms["FrmTaskList"] == null)
+            {
+                frm4 = new FrmTaskList();
+                frm4.MdiParent = this;
+                frm4.Show();
+            }
+            else
+            {
+                Application.OpenForms["FrmTaskList"].Activate();
+            }
         }
 
         private void BtnDefineNewTask_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
