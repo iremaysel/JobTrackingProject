@@ -95,5 +95,20 @@ namespace JobTrackingProject
             Forms.FrmTaskDetails fr2 = new Forms.FrmTaskDetails();
             fr2.Show();
         }
+
+        Forms.FrmMainForm frm5;
+        private void BtnMainForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (Application.OpenForms["FrmMainForm"] == null)
+            {
+                frm5 = new FrmMainForm();
+                frm5.MdiParent = this;
+                frm5.Show();
+            }
+            else
+            {
+                Application.OpenForms["FrmMainForm"].Activate();
+            }
+        }
     }
 }

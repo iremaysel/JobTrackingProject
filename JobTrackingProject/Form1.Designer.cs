@@ -32,7 +32,7 @@ namespace JobTrackingProject
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnMainForm = new DevExpress.XtraBars.BarButtonItem();
             this.btnDepartmentList = new DevExpress.XtraBars.BarButtonItem();
             this.en = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
@@ -88,7 +88,7 @@ namespace JobTrackingProject
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
-            this.barButtonItem1,
+            this.BtnMainForm,
             this.btnDepartmentList,
             this.en,
             this.barButtonItem3,
@@ -126,13 +126,14 @@ namespace JobTrackingProject
             this.ribbonPage6});
             this.ribbonControl1.Size = new System.Drawing.Size(984, 150);
             // 
-            // barButtonItem1
+            // BtnMainForm
             // 
-            this.barButtonItem1.Caption = "Ana Sayfa";
-            this.barButtonItem1.Id = 1;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.BtnMainForm.Caption = "Ana Sayfa";
+            this.BtnMainForm.Id = 1;
+            this.BtnMainForm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.BtnMainForm.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.BtnMainForm.Name = "BtnMainForm";
+            this.BtnMainForm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnMainForm_ItemClick);
             // 
             // btnDepartmentList
             // 
@@ -263,8 +264,8 @@ namespace JobTrackingProject
             // 
             this.BtnTaskDetails.Caption = "Görev Detayları";
             this.BtnTaskDetails.Id = 17;
-            this.BtnTaskDetails.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.Image")));
-            this.BtnTaskDetails.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.LargeImage")));
+            this.BtnTaskDetails.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnTaskDetails.ImageOptions.Image")));
+            this.BtnTaskDetails.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnTaskDetails.ImageOptions.LargeImage")));
             this.BtnTaskDetails.Name = "BtnTaskDetails";
             this.BtnTaskDetails.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnTaskDetails_ItemClick);
             // 
@@ -341,7 +342,7 @@ namespace JobTrackingProject
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.BtnMainForm);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPage1
@@ -491,7 +492,7 @@ namespace JobTrackingProject
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage HomePage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem BtnMainForm;
         private DevExpress.XtraBars.BarButtonItem btnDepartmentList;
         private DevExpress.XtraBars.BarButtonItem en;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;

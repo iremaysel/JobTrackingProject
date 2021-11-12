@@ -126,6 +126,12 @@
     <Compile Include="Forms\FrmEmployeeStatistics.Designer.cs">
       <DependentUpon>FrmEmployeeStatistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMainForm.Designer.cs">
+      <DependentUpon>FrmMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmTask.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmEmployeeStatistics.resx">
       <DependentUpon>FrmEmployeeStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMainForm.resx">
+      <DependentUpon>FrmMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmTask.resx">
       <DependentUpon>FrmTask.cs</DependentUpon>
