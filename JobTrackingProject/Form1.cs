@@ -56,5 +56,11 @@ namespace JobTrackingProject
             Forms.FrmTask fr = new Forms.FrmTask();
             fr.Show();
         }
+
+        private void BtnTaskDetails_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmTaskDetails fr2 = new Forms.FrmTaskDetails();
+            fr2.Show();
+        }
     }
 }
