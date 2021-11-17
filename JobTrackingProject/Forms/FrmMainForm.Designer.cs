@@ -110,7 +110,7 @@ namespace JobTrackingProject.Forms
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(323, 145);
             this.groupControl3.TabIndex = 3;
-            this.groupControl3.Text = "groupControl3";
+            this.groupControl3.Text = "Aktif Çağrılar";
             // 
             // gridControl3
             // 

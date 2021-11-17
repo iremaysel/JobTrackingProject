@@ -15,6 +15,8 @@
         <AssociationConnector Association="DbJobTrackingModel.FK_TblTask_TblEmployee" ManuallyRouted="false" />
         <AssociationConnector Association="DbJobTrackingModel.FK_TblTask_TblEmployee1" ManuallyRouted="false" />
         <AssociationConnector Association="DbJobTrackingModel.FK_TblTaskDetail_TblTask" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DbJobTrackingModel.TblCall" Width="1.5" PointX="5" PointY="5.125" />
+        <AssociationConnector Association="DbJobTrackingModel.FK_TblCall_TblCompanies" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

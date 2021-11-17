@@ -87,6 +87,9 @@
     <Compile Include="Entity Framework\TblAdmin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity Framework\TblCall.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Framework\TblCompanies.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

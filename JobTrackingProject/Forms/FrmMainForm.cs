@@ -22,24 +22,36 @@ namespace JobTrackingProject.Forms
         private void FrmMainForm_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = (from x in db.TblTask
-                select new
-                {
-                    Durum = x.Status,
-                    Açıklama = x.Satement,
-                    Personel = x.TblEmployee.Name + " " + x.TblEmployee.Surname
-                }).Where(y=>y.Durum == true).ToList();
+                                       select new
+                                       {
+                                           Durum = x.Status,
+                                           Açıklama = x.Satement,
+                                           Personel = x.TblEmployee.Name + " " + x.TblEmployee.Surname
+                                       }).Where(y => y.Durum == true).ToList();
             gridView1.Columns["Durum"].Visible = false;
 
             // Tasks done today
             DateTime today = DateTime.Parse(DateTime.Now.ToShortDateString());
             gridControl2.DataSource = (from x in db.TblTaskDetail
-                select new
-                {
-                    Görev = x.TblTask.Satement,
-                    Açıklama = x.Statement,
-                    Tarih = x.Dates
-                }).Where(x => x.Tarih == today).ToList();
+                                       select new
+                                       {
+                                           Görev = x.TblTask.Satement,
+                                           Açıklama = x.Statement,
+                                           Tarih = x.Dates
+                                       }).Where(x => x.Tarih == today).ToList();
             gridView2.Columns["Tarih"].Visible = false;
+
+            // active call list
+
+            gridControl3.DataSource = (from x in db.TblCall
+                                       select new
+                                       {
+                                           FirmaAdı = x.TblCompanies.Name,
+                                           ÇağrıKonusu = x.CallSubject,
+                                           ÇağrıTarihi = x.CallDate,
+                                           ÇağrıDurum = x.CallStatus
+                                       }).Where(x => x.ÇağrıDurum == true).ToList();
+            gridView3.Columns["ÇağrıDurum"].Visible = false;
         }
     }
 }

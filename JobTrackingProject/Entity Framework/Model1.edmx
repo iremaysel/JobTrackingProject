@@ -13,13 +13,22 @@
           <Property Name="Users" Type="nvarchar" MaxLength="10" />
           <Property Name="Password" Type="nvarchar" MaxLength="10" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'DbJobTracking.dbo.TblCompanies' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="TblCompanies">
+        <EntityType Name="TblCall">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CallCompany" Type="int" />
+          <Property Name="CallSubject" Type="nvarchar" MaxLength="50" />
+          <Property Name="CallStatement" Type="nvarchar(max)" />
+          <Property Name="CallStatus" Type="bit" />
+          <Property Name="CallDate" Type="date" />
+        </EntityType>
+        <EntityType Name="TblCompanies">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="nvarchar" MaxLength="30" />
           <Property Name="Authorized" Type="nvarchar" MaxLength="30" />
           <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
@@ -70,6 +79,18 @@ warning 6002: The table/view 'DbJobTracking.dbo.TblCompanies' does not have a pr
           <Property Name="Dates" Type="date" />
           <Property Name="Clock" Type="char" MaxLength="5" />
         </EntityType>
+        <Association Name="FK_TblCall_TblCompanies">
+          <End Role="TblCompanies" Type="Self.TblCompanies" Multiplicity="0..1" />
+          <End Role="TblCall" Type="Self.TblCall" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCompanies">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblCall">
+              <PropertyRef Name="CallCompany" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TblEmployee_TblDepartments">
           <End Role="TblDepartments" Type="Self.TblDepartments" Multiplicity="0..1" />
           <End Role="TblEmployee" Type="Self.TblEmployee" Multiplicity="*" />
@@ -96,23 +117,16 @@ warning 6002: The table/view 'DbJobTracking.dbo.TblCompanies' does not have a pr
         </Association>
         <EntityContainer Name="DbJobTrackingModelStoreContainer">
           <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCall" EntityType="Self.TblCall" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCompanies" EntityType="Self.TblCompanies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDepartments" EntityType="Self.TblDepartments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblEmployee" EntityType="Self.TblEmployee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblTask" EntityType="Self.TblTask" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblTaskDetail" EntityType="Self.TblTaskDetail" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TblCompanies" EntityType="Self.TblCompanies" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TblCompanies].[ID] AS [ID], 
-    [TblCompanies].[Name] AS [Name], 
-    [TblCompanies].[Authorized] AS [Authorized], 
-    [TblCompanies].[Telephone] AS [Telephone], 
-    [TblCompanies].[Email] AS [Email], 
-    [TblCompanies].[Sector] AS [Sector], 
-    [TblCompanies].[Province] AS [Province], 
-    [TblCompanies].[District] AS [District], 
-    [TblCompanies].[Address] AS [Address]
-    FROM [dbo].[TblCompanies] AS [TblCompanies]</DefiningQuery>
-          </EntitySet>
+          <AssociationSet Name="FK_TblCall_TblCompanies" Association="Self.FK_TblCall_TblCompanies">
+            <End Role="TblCompanies" EntitySet="TblCompanies" />
+            <End Role="TblCall" EntitySet="TblCall" />
+          </AssociationSet>
           <AssociationSet Name="FK_TblEmployee_TblDepartments" Association="Self.FK_TblEmployee_TblDepartments">
             <End Role="TblDepartments" EntitySet="TblDepartments" />
             <End Role="TblEmployee" EntitySet="TblEmployee" />
@@ -196,6 +210,7 @@ warning 6002: The table/view 'DbJobTracking.dbo.TblCompanies' does not have a pr
           <Property Name="Province" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="District" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TblCall" Relationship="DbJobTrackingModel.FK_TblCall_TblCompanies" FromRole="TblCompanies" ToRole="TblCall" />
         </EntityType>
         <Association Name="FK_TblEmployee_TblDepartments">
           <End Role="TblDepartments" Type="Self.TblDepartments" Multiplicity="0..1" />
@@ -268,7 +283,36 @@ warning 6002: The table/view 'DbJobTracking.dbo.TblCompanies' does not have a pr
             <End Role="TblTask" EntitySet="TblTask" />
             <End Role="TblTaskDetail" EntitySet="TblTaskDetail" />
           </AssociationSet>
+          <EntitySet Name="TblCall" EntityType="DbJobTrackingModel.TblCall" />
+          <AssociationSet Name="FK_TblCall_TblCompanies" Association="DbJobTrackingModel.FK_TblCall_TblCompanies">
+            <End Role="TblCompanies" EntitySet="TblCompanies" />
+            <End Role="TblCall" EntitySet="TblCall" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="TblCall">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CallCompany" Type="Int32" />
+          <Property Name="CallSubject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CallStatement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CallDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TblCompanies" Relationship="DbJobTrackingModel.FK_TblCall_TblCompanies" FromRole="TblCall" ToRole="TblCompanies" />
+          <Property Name="CallStatus" Type="Boolean" />
+        </EntityType>
+        <Association Name="FK_TblCall_TblCompanies">
+          <End Type="DbJobTrackingModel.TblCompanies" Role="TblCompanies" Multiplicity="0..1" />
+          <End Type="DbJobTrackingModel.TblCall" Role="TblCall" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCompanies">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblCall">
+              <PropertyRef Name="CallCompany" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -341,6 +385,18 @@ warning 6002: The table/view 'DbJobTracking.dbo.TblCompanies' does not have a pr
                 <ScalarProperty Name="Province" ColumnName="Province" />
                 <ScalarProperty Name="District" ColumnName="District" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCall">
+            <EntityTypeMapping TypeName="DbJobTrackingModel.TblCall">
+              <MappingFragment StoreEntitySet="TblCall">
+                <ScalarProperty Name="CallStatus" ColumnName="CallStatus" />
+                <ScalarProperty Name="CallDate" ColumnName="CallDate" />
+                <ScalarProperty Name="CallStatement" ColumnName="CallStatement" />
+                <ScalarProperty Name="CallSubject" ColumnName="CallSubject" />
+                <ScalarProperty Name="CallCompany" ColumnName="CallCompany" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

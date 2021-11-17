@@ -14,6 +14,12 @@ namespace JobTrackingProject.Entity_Framework
     
     public partial class TblCompanies
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TblCompanies()
+        {
+            this.TblCall = new HashSet<TblCall>();
+        }
+    
         public int ID { get; set; }
         public string Name { get; set; }
         public string Authorized { get; set; }
@@ -23,5 +29,8 @@ namespace JobTrackingProject.Entity_Framework
         public string Province { get; set; }
         public string District { get; set; }
         public string Address { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblCall> TblCall { get; set; }
     }
 }
