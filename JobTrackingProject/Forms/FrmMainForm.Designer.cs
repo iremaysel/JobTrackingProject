@@ -29,6 +29,8 @@ namespace JobTrackingProject.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -38,6 +40,11 @@ namespace JobTrackingProject.Forms
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -50,6 +57,15 @@ namespace JobTrackingProject.Forms
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
+            this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
+            this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -74,14 +90,14 @@ namespace JobTrackingProject.Forms
             this.groupControl1.Controls.Add(this.gridControl1);
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(323, 302);
+            this.groupControl1.Size = new System.Drawing.Size(295, 302);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Devam Eden Görevler";
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.gridControl2);
-            this.groupControl2.Location = new System.Drawing.Point(341, 12);
+            this.groupControl2.Location = new System.Drawing.Point(313, 12);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(323, 145);
             this.groupControl2.TabIndex = 2;
@@ -106,7 +122,7 @@ namespace JobTrackingProject.Forms
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.gridControl3);
-            this.groupControl3.Location = new System.Drawing.Point(341, 169);
+            this.groupControl3.Location = new System.Drawing.Point(313, 169);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(323, 145);
             this.groupControl3.TabIndex = 3;
@@ -128,11 +144,59 @@ namespace JobTrackingProject.Forms
             this.gridView3.GridControl = this.gridControl3;
             this.gridView3.Name = "gridView3";
             // 
+            // groupControl4
+            // 
+            this.groupControl4.Controls.Add(this.gridControl4);
+            this.groupControl4.Location = new System.Drawing.Point(642, 12);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(323, 145);
+            this.groupControl4.TabIndex = 3;
+            this.groupControl4.Text = "Firma Bilgileri";
+            // 
+            // gridControl4
+            // 
+            this.gridControl4.Location = new System.Drawing.Point(0, 19);
+            this.gridControl4.MainView = this.gridView4;
+            this.gridControl4.Name = "gridControl4";
+            this.gridControl4.Size = new System.Drawing.Size(323, 126);
+            this.gridControl4.TabIndex = 0;
+            this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4});
+            // 
+            // gridView4
+            // 
+            this.gridView4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gridView4.GridControl = this.gridControl4;
+            this.gridView4.Name = "gridView4";
+            // 
+            // groupControl5
+            // 
+            this.groupControl5.Controls.Add(this.chartControl1);
+            this.groupControl5.Location = new System.Drawing.Point(642, 169);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.Size = new System.Drawing.Size(323, 145);
+            this.groupControl5.TabIndex = 4;
+            this.groupControl5.Text = "Çağrı Grafiği";
+            // 
+            // chartControl1
+            // 
+            this.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartControl1.Location = new System.Drawing.Point(2, 23);
+            this.chartControl1.Name = "chartControl1";
+            series1.Name = "Series 1";
+            series1.View = pieSeriesView1;
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.chartControl1.Size = new System.Drawing.Size(319, 120);
+            this.chartControl1.TabIndex = 0;
+            // 
             // FrmMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 326);
+            this.Controls.Add(this.groupControl5);
+            this.Controls.Add(this.groupControl4);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
@@ -151,6 +215,15 @@ namespace JobTrackingProject.Forms
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
+            this.groupControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
+            this.groupControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -166,5 +239,10 @@ namespace JobTrackingProject.Forms
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraGrid.GridControl gridControl3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private DevExpress.XtraGrid.GridControl gridControl4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraEditors.GroupControl groupControl5;
+        private DevExpress.XtraCharts.ChartControl chartControl1;
     }
 }

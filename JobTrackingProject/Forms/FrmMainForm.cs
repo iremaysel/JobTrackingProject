@@ -42,7 +42,6 @@ namespace JobTrackingProject.Forms
             gridView2.Columns["Tarih"].Visible = false;
 
             // active call list
-
             gridControl3.DataSource = (from x in db.TblCall
                                        select new
                                        {
@@ -52,6 +51,26 @@ namespace JobTrackingProject.Forms
                                            ÇağrıDurum = x.CallStatus
                                        }).Where(x => x.ÇağrıDurum == true).ToList();
             gridView3.Columns["ÇağrıDurum"].Visible = false;
+
+            // Contents
+            gridControl4.DataSource = (from x in db.TblCompanies
+                select new
+                {
+                    FirmaAdı = x.Name,
+                    Telefon = x.Telephone,
+                    Mail = x.Email
+                }).ToList();
+
+            // Call graphic
+
+            int activeCall = db.TblCall.Where(x => x.CallStatus == true).Count();
+            int passiveCall = db.TblCall.Where(x => x.CallStatus == false).Count();
+            
+            chartControl1.Series["Series 1"].Points.AddPoint("Aktif Görevler", activeCall);
+            chartControl1.Series["Series 1"].Points.AddPoint("Pasif Görevler", passiveCall);
+
+
+
         }
     }
 }
