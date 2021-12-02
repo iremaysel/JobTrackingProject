@@ -54,18 +54,18 @@ namespace JobTrackingProject.Forms
 
             // Contents
             gridControl4.DataSource = (from x in db.TblCompanies
-                select new
-                {
-                    FirmaAdı = x.Name,
-                    Telefon = x.Telephone,
-                    Mail = x.Email
-                }).ToList();
+                                       select new
+                                       {
+                                           FirmaAdı = x.Name,
+                                           Telefon = x.Telephone,
+                                           Mail = x.Email
+                                       }).ToList();
 
             // Call graphic
 
             int activeCall = db.TblCall.Where(x => x.CallStatus == true).Count();
             int passiveCall = db.TblCall.Where(x => x.CallStatus == false).Count();
-            
+
             chartControl1.Series["Series 1"].Points.AddPoint("Aktif Görevler", activeCall);
             chartControl1.Series["Series 1"].Points.AddPoint("Pasif Görevler", passiveCall);
 

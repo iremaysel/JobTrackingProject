@@ -34,18 +34,18 @@ namespace JobTrackingProject.Forms
                              Departman = x.TblDepartments.Name,
                              Durum = x.Status
                          };
-            gridControl1.DataSource = values.Where(x=>x.Durum == true).ToList();
+            gridControl1.DataSource = values.Where(x => x.Durum == true).ToList();
 
         }
         private void FrmEmployees_Load(object sender, EventArgs e)
         {
             Employees();
             var departments = (from x in db.TblDepartments
-                select new
-                {
-                    x.ID,
-                    Ad = x.Name
-                }).ToList();
+                               select new
+                               {
+                                   x.ID,
+                                   Ad = x.Name
+                               }).ToList();
             departmentNames.Properties.ValueMember = "ID";
             departmentNames.Properties.DisplayMember = "Ad";
             departmentNames.Properties.DataSource = departments;
@@ -119,7 +119,7 @@ namespace JobTrackingProject.Forms
 
         }
 
-        private void gridView1_FocusedRowChanged(object sender, 
+        private void gridView1_FocusedRowChanged(object sender,
             DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             TxtID.Text = gridView1.GetFocusedRowCellValue("ID").ToString();

@@ -130,8 +130,8 @@ namespace JobTrackingProject
             // 
             this.BtnMainForm.Caption = "Ana Sayfa";
             this.BtnMainForm.Id = 1;
-            this.BtnMainForm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.BtnMainForm.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.BtnMainForm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnMainForm.ImageOptions.Image")));
+            this.BtnMainForm.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnMainForm.ImageOptions.LargeImage")));
             this.BtnMainForm.Name = "BtnMainForm";
             this.BtnMainForm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnMainForm_ItemClick);
             // 
@@ -342,6 +342,7 @@ namespace JobTrackingProject
             // 
             // ribbonPageGroup1
             // 
+            this.ribbonPageGroup1.ImageOptions.Image = global::JobTrackingProject.Properties.Resources.icons8_homebrew_1;
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnMainForm);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
@@ -538,4 +539,3 @@ namespace JobTrackingProject
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
     }
 }
-

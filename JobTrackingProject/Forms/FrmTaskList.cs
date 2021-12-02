@@ -22,10 +22,10 @@ namespace JobTrackingProject.Forms
         private void FrmTaskList_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = (from x in db.TblTask
-                select new
-                {
-                    Açıklama = x.Satement
-                }).ToList();
+                                       select new
+                                       {
+                                           Açıklama = x.Satement
+                                       }).ToList();
 
             LblActiveTask.Text = db.TblTask.Where(x => x.Status == true).Count().ToString();
             LblPassiveTask.Text = db.TblTask.Where(x => x.Status == false).Count().ToString();

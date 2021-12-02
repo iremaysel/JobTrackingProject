@@ -36,7 +36,7 @@ namespace JobTrackingProject
             {
                 Application.OpenForms["FrmDepartments"].Activate();
             }
-            
+
         }
 
         Forms.FrmEmployees frm2;

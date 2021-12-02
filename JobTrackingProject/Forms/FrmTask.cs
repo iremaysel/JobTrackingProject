@@ -22,11 +22,11 @@ namespace JobTrackingProject.Forms
         private void FrmTask_Load(object sender, EventArgs e)
         {
             var values = (from x in db.TblEmployee
-                select new
-                {
-                    x.ID,
-                    AdSoyad = x.Name +" "+ x.Surname
-                }).ToList();
+                          select new
+                          {
+                              x.ID,
+                              AdSoyad = x.Name + " " + x.Surname
+                          }).ToList();
             LueGetTask.Properties.ValueMember = "ID";
             LueGetTask.Properties.DisplayMember = "AdSoyad";
             LueGetTask.Properties.DataSource = values;
