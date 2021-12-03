@@ -17,6 +17,8 @@ namespace JobTrackingProject.EmployeeTaskForms
             InitializeComponent();
         }
 
+        public int id;
+
         private void BtnGiveUp_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -24,6 +26,8 @@ namespace JobTrackingProject.EmployeeTaskForms
 
         private void FrmCallDetail_Load(object sender, EventArgs e)
         {
+            TxtCallID.Enabled = false;
+            TxtCallID.Text = id.ToString();
             string clocks, dates;
             dates = DateTime.Now.ToShortDateString();
             clocks = DateTime.Now.ToShortTimeString();

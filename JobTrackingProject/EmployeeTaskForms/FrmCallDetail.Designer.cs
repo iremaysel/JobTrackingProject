@@ -32,44 +32,44 @@ namespace JobTrackingProject.EmployeeTaskForms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCallDetail));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.TxtCallID = new DevExpress.XtraEditors.LabelControl();
-            this.TxtClock = new DevExpress.XtraEditors.LabelControl();
+            this.callid = new DevExpress.XtraEditors.LabelControl();
+            this.txtclocks = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.BtnSave = new DevExpress.XtraEditors.SimpleButton();
             this.pictureEdit5 = new DevExpress.XtraEditors.PictureEdit();
             this.TxtDates = new DevExpress.XtraEditors.DateEdit();
             this.TxtDescription = new DevExpress.XtraEditors.MemoEdit();
-            this.TxtGiveTesk = new DevExpress.XtraEditors.TextEdit();
+            this.TxtCallID = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.BtnGiveUp = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.TxtClock = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDates.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDates.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDescription.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtGiveTesk.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCallID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtClock.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.textEdit1);
+            this.panelControl1.Controls.Add(this.TxtClock);
             this.panelControl1.Controls.Add(this.pictureEdit5);
             this.panelControl1.Controls.Add(this.TxtDates);
             this.panelControl1.Controls.Add(this.labelControl5);
             this.panelControl1.Controls.Add(this.TxtDescription);
+            this.panelControl1.Controls.Add(this.callid);
             this.panelControl1.Controls.Add(this.TxtCallID);
-            this.panelControl1.Controls.Add(this.TxtGiveTesk);
             this.panelControl1.Controls.Add(this.pictureEdit1);
             this.panelControl1.Controls.Add(this.pictureEdit3);
-            this.panelControl1.Controls.Add(this.TxtClock);
+            this.panelControl1.Controls.Add(this.txtclocks);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.pictureEdit2);
             this.panelControl1.Location = new System.Drawing.Point(15, 12);
@@ -85,21 +85,21 @@ namespace JobTrackingProject.EmployeeTaskForms
             this.labelControl5.TabIndex = 16;
             this.labelControl5.Text = "Açıklama";
             // 
-            // TxtCallID
+            // callid
             // 
-            this.TxtCallID.Location = new System.Drawing.Point(73, 15);
-            this.TxtCallID.Name = "TxtCallID";
-            this.TxtCallID.Size = new System.Drawing.Size(42, 13);
-            this.TxtCallID.TabIndex = 1;
-            this.TxtCallID.Text = "Çağrı ID ";
+            this.callid.Location = new System.Drawing.Point(73, 15);
+            this.callid.Name = "callid";
+            this.callid.Size = new System.Drawing.Size(42, 13);
+            this.callid.TabIndex = 1;
+            this.callid.Text = "Çağrı ID ";
             // 
-            // TxtClock
+            // txtclocks
             // 
-            this.TxtClock.Location = new System.Drawing.Point(73, 45);
-            this.TxtClock.Name = "TxtClock";
-            this.TxtClock.Size = new System.Drawing.Size(25, 13);
-            this.TxtClock.TabIndex = 6;
-            this.TxtClock.Text = "Saat ";
+            this.txtclocks.Location = new System.Drawing.Point(73, 45);
+            this.txtclocks.Name = "txtclocks";
+            this.txtclocks.Size = new System.Drawing.Size(25, 13);
+            this.txtclocks.TabIndex = 6;
+            this.txtclocks.Text = "Saat ";
             // 
             // labelControl3
             // 
@@ -155,12 +155,12 @@ namespace JobTrackingProject.EmployeeTaskForms
             this.TxtDescription.Size = new System.Drawing.Size(272, 112);
             this.TxtDescription.TabIndex = 7;
             // 
-            // TxtGiveTesk
+            // TxtCallID
             // 
-            this.TxtGiveTesk.Location = new System.Drawing.Point(152, 12);
-            this.TxtGiveTesk.Name = "TxtGiveTesk";
-            this.TxtGiveTesk.Size = new System.Drawing.Size(272, 20);
-            this.TxtGiveTesk.TabIndex = 2;
+            this.TxtCallID.Location = new System.Drawing.Point(152, 12);
+            this.TxtCallID.Name = "TxtCallID";
+            this.TxtCallID.Size = new System.Drawing.Size(272, 20);
+            this.TxtCallID.TabIndex = 2;
             // 
             // pictureEdit1
             // 
@@ -211,12 +211,12 @@ namespace JobTrackingProject.EmployeeTaskForms
             this.BtnGiveUp.Text = "Vazgeç";
             this.BtnGiveUp.Click += new System.EventHandler(this.BtnGiveUp_Click);
             // 
-            // textEdit1
+            // TxtClock
             // 
-            this.textEdit1.Location = new System.Drawing.Point(152, 42);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(272, 20);
-            this.textEdit1.TabIndex = 18;
+            this.TxtClock.Location = new System.Drawing.Point(152, 42);
+            this.TxtClock.Name = "TxtClock";
+            this.TxtClock.Size = new System.Drawing.Size(272, 20);
+            this.TxtClock.TabIndex = 18;
             // 
             // FrmCallDetail
             // 
@@ -236,11 +236,11 @@ namespace JobTrackingProject.EmployeeTaskForms
             ((System.ComponentModel.ISupportInitialize)(this.TxtDates.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDates.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDescription.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtGiveTesk.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCallID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtClock.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -253,14 +253,14 @@ namespace JobTrackingProject.EmployeeTaskForms
         private DevExpress.XtraEditors.DateEdit TxtDates;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.MemoEdit TxtDescription;
-        private DevExpress.XtraEditors.LabelControl TxtCallID;
-        private DevExpress.XtraEditors.TextEdit TxtGiveTesk;
+        private DevExpress.XtraEditors.LabelControl callid;
+        private DevExpress.XtraEditors.TextEdit TxtCallID;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit3;
-        private DevExpress.XtraEditors.LabelControl TxtClock;
+        private DevExpress.XtraEditors.LabelControl txtclocks;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
         private DevExpress.XtraEditors.SimpleButton BtnGiveUp;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit TxtClock;
     }
 }

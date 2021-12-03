@@ -18,6 +18,7 @@ namespace JobTrackingProject.EmployeeTaskForms
             InitializeComponent();
         }
 
+        
         DbJobTrackingEntities db = new DbJobTrackingEntities();
 
         private void FrmCallList_Load(object sender, EventArgs e)
@@ -36,6 +37,18 @@ namespace JobTrackingProject.EmployeeTaskForms
             gridView1.Columns["CallStatus"].Visible = false;
             gridView1.Columns["ID"].Visible = false;
 
+        }
+
+        private void FrmCallList_DoubleClick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            FrmCallDetail fr = new FrmCallDetail();
+            fr.id = int.Parse(gridView1.GetFocusedRowCellValue("ID").ToString());
+            fr.Show();
         }
     }
 }

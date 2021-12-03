@@ -50,6 +50,7 @@ namespace JobTrackingProject.EmployeeTaskForms
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // FrmCallList
             // 
@@ -60,6 +61,7 @@ namespace JobTrackingProject.EmployeeTaskForms
             this.Name = "FrmCallList";
             this.Text = "Çağrı Listesi";
             this.Load += new System.EventHandler(this.FrmCallList_Load);
+            this.DoubleClick += new System.EventHandler(this.FrmCallList_DoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
