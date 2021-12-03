@@ -133,6 +133,16 @@ namespace JobTrackingProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_phone_ringing {
+            get {
+                object obj = ResourceManager.GetObject("icons8_phone_ringing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_puzzle {
             get {
                 object obj = ResourceManager.GetObject("icons8_puzzle", resourceCulture);

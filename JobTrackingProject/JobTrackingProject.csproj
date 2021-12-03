@@ -132,6 +132,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmActiveCalls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmActiveCalls.Designer.cs">
+      <DependentUpon>FrmActiveCalls.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmDepartments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,12 @@
     <Compile Include="Forms\FrmMainForm.Designer.cs">
       <DependentUpon>FrmMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmPassiveCalls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPassiveCalls.Designer.cs">
+      <DependentUpon>FrmPassiveCalls.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmTask.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +191,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmActiveCalls.resx">
+      <DependentUpon>FrmActiveCalls.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmDepartments.resx">
       <DependentUpon>FrmDepartments.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMainForm.resx">
       <DependentUpon>FrmMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPassiveCalls.resx">
+      <DependentUpon>FrmPassiveCalls.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmTask.resx">
       <DependentUpon>FrmTask.cs</DependentUpon>
@@ -247,6 +265,7 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Resources\icons8_homebrew_1.ico" />
+    <None Include="Resources\icons8_phone_ringing.ico" />
     <None Include="Resources\barButtonItem20.ImageOptions.Image.png" />
     <None Include="Resources\en.ImageOptions.Image.png" />
     <None Include="Resources\en.ImageOptions.LargeImage.png" />

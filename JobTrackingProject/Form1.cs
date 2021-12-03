@@ -110,5 +110,36 @@ namespace JobTrackingProject
                 Application.OpenForms["FrmMainForm"].Activate();
             }
         }
+
+        Forms.FrmActiveCalls frm6;
+        private void BtnActiveCalls_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (Application.OpenForms["FrmActiveCalls"] == null)
+            {
+                frm6 = new FrmActiveCalls();
+                frm6.MdiParent = this;
+                frm6.Show();
+            }
+            else
+            {
+                Application.OpenForms["FrmActiveCalls"].Activate();
+            }
+
+        }
+
+        Forms.FrmPassiveCalls frm7;
+        private void BtnPassiveCalls_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (Application.OpenForms["FrmPassiveCalls"] == null)
+            {
+                frm7 = new FrmPassiveCalls();
+                frm7.MdiParent = this;
+                frm7.Show();
+            }
+            else
+            {
+                Application.OpenForms["FrmPassiveCalls"].Activate();
+            }
+        }
     }
 }

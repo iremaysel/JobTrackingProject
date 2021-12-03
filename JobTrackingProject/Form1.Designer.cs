@@ -57,6 +57,8 @@ namespace JobTrackingProject
             this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnActiveCalls = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnPassiveCalls = new DevExpress.XtraBars.BarButtonItem();
             this.HomePage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -72,6 +74,8 @@ namespace JobTrackingProject
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -112,9 +116,11 @@ namespace JobTrackingProject
             this.barButtonItem21,
             this.barButtonItem22,
             this.barButtonItem23,
-            this.barButtonItem24});
+            this.barButtonItem24,
+            this.BtnActiveCalls,
+            this.BtnPassiveCalls});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 26;
+            this.ribbonControl1.MaxItemId = 28;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.HomePage,
@@ -122,6 +128,7 @@ namespace JobTrackingProject
             this.ribbonPage2,
             this.ribbonPage3,
             this.ribbonPage4,
+            this.ribbonPage7,
             this.ribbonPage5,
             this.ribbonPage6});
             this.ribbonControl1.Size = new System.Drawing.Size(984, 150);
@@ -333,6 +340,23 @@ namespace JobTrackingProject
             this.barButtonItem24.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem24.ImageOptions.LargeImage")));
             this.barButtonItem24.Name = "barButtonItem24";
             // 
+            // BtnActiveCalls
+            // 
+            this.BtnActiveCalls.Caption = "Aktif Çağrılar";
+            this.BtnActiveCalls.Id = 26;
+            this.BtnActiveCalls.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnActiveCalls.ImageOptions.SvgImage")));
+            this.BtnActiveCalls.Name = "BtnActiveCalls";
+            this.BtnActiveCalls.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnActiveCalls_ItemClick);
+            // 
+            // BtnPassiveCalls
+            // 
+            this.BtnPassiveCalls.Caption = "Pasif Çağrılar";
+            this.BtnPassiveCalls.Id = 27;
+            this.BtnPassiveCalls.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnPassiveCalls.ImageOptions.Image")));
+            this.BtnPassiveCalls.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnPassiveCalls.ImageOptions.LargeImage")));
+            this.BtnPassiveCalls.Name = "BtnPassiveCalls";
+            this.BtnPassiveCalls.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPassiveCalls_ItemClick);
+            // 
             // HomePage
             // 
             this.HomePage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -431,6 +455,19 @@ namespace JobTrackingProject
             // 
             this.ribbonPageGroup10.ItemLinks.Add(this.BtnTaskDetails);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            // 
+            // ribbonPage7
+            // 
+            this.ribbonPage7.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup14});
+            this.ribbonPage7.Name = "ribbonPage7";
+            this.ribbonPage7.Text = "Çağrılar";
+            // 
+            // ribbonPageGroup14
+            // 
+            this.ribbonPageGroup14.ItemLinks.Add(this.BtnActiveCalls);
+            this.ribbonPageGroup14.ItemLinks.Add(this.BtnPassiveCalls);
+            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
             // 
             // ribbonPage5
             // 
@@ -537,5 +574,9 @@ namespace JobTrackingProject
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.BarButtonItem BtnActiveCalls;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage7;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
+        private DevExpress.XtraBars.BarButtonItem BtnPassiveCalls;
     }
 }
