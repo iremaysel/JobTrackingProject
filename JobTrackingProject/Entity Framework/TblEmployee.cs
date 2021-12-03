@@ -19,6 +19,7 @@ namespace JobTrackingProject.Entity_Framework
         {
             this.TblTask = new HashSet<TblTask>();
             this.TblTask1 = new HashSet<TblTask>();
+            this.TblCall = new HashSet<TblCall>();
         }
     
         public int ID { get; set; }
@@ -29,11 +30,14 @@ namespace JobTrackingProject.Entity_Framework
         public string Image { get; set; }
         public Nullable<int> Department { get; set; }
         public Nullable<bool> Status { get; set; }
+        public string Role { get; set; }
     
         public virtual TblDepartments TblDepartments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblTask> TblTask { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblTask> TblTask1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblCall> TblCall { get; set; }
     }
 }

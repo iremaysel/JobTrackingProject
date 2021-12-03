@@ -14,13 +14,23 @@ namespace JobTrackingProject.Entity_Framework
     
     public partial class TblCall
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TblCall()
+        {
+            this.TblCallDetail = new HashSet<TblCallDetail>();
+        }
+    
         public int ID { get; set; }
         public Nullable<int> CallCompany { get; set; }
         public string CallSubject { get; set; }
         public string CallStatement { get; set; }
         public Nullable<System.DateTime> CallDate { get; set; }
         public Nullable<bool> CallStatus { get; set; }
+        public Nullable<int> CallEmployee { get; set; }
     
         public virtual TblCompanies TblCompanies { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblCallDetail> TblCallDetail { get; set; }
+        public virtual TblEmployee TblEmployee { get; set; }
     }
 }

@@ -31,22 +31,23 @@ namespace JobTrackingProject.EmployeeTaskForms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCallDetail));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.callid = new DevExpress.XtraEditors.LabelControl();
-            this.txtclocks = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.BtnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.TxtClock = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit5 = new DevExpress.XtraEditors.PictureEdit();
             this.TxtDates = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.TxtDescription = new DevExpress.XtraEditors.MemoEdit();
+            this.callid = new DevExpress.XtraEditors.LabelControl();
             this.TxtCallID = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
+            this.txtclocks = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
+            this.BtnSave = new DevExpress.XtraEditors.SimpleButton();
             this.BtnGiveUp = new DevExpress.XtraEditors.SimpleButton();
-            this.TxtClock = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtClock.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDates.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDates.Properties)).BeginInit();
@@ -55,7 +56,6 @@ namespace JobTrackingProject.EmployeeTaskForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtClock.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -77,46 +77,12 @@ namespace JobTrackingProject.EmployeeTaskForms
             this.panelControl1.Size = new System.Drawing.Size(444, 223);
             this.panelControl1.TabIndex = 21;
             // 
-            // labelControl5
+            // TxtClock
             // 
-            this.labelControl5.Location = new System.Drawing.Point(73, 107);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(41, 13);
-            this.labelControl5.TabIndex = 16;
-            this.labelControl5.Text = "Açıklama";
-            // 
-            // callid
-            // 
-            this.callid.Location = new System.Drawing.Point(73, 15);
-            this.callid.Name = "callid";
-            this.callid.Size = new System.Drawing.Size(42, 13);
-            this.callid.TabIndex = 1;
-            this.callid.Text = "Çağrı ID ";
-            // 
-            // txtclocks
-            // 
-            this.txtclocks.Location = new System.Drawing.Point(73, 45);
-            this.txtclocks.Name = "txtclocks";
-            this.txtclocks.Size = new System.Drawing.Size(25, 13);
-            this.txtclocks.TabIndex = 6;
-            this.txtclocks.Text = "Saat ";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(73, 74);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(24, 13);
-            this.labelControl3.TabIndex = 10;
-            this.labelControl3.Text = "Tarih";
-            // 
-            // BtnSave
-            // 
-            this.BtnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnSave.ImageOptions.Image")));
-            this.BtnSave.Location = new System.Drawing.Point(337, 248);
-            this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(102, 23);
-            this.BtnSave.TabIndex = 23;
-            this.BtnSave.Text = "Kaydet";
+            this.TxtClock.Location = new System.Drawing.Point(152, 42);
+            this.TxtClock.Name = "TxtClock";
+            this.TxtClock.Size = new System.Drawing.Size(272, 20);
+            this.TxtClock.TabIndex = 18;
             // 
             // pictureEdit5
             // 
@@ -148,12 +114,28 @@ namespace JobTrackingProject.EmployeeTaskForms
             this.TxtDates.Size = new System.Drawing.Size(272, 20);
             this.TxtDates.TabIndex = 12;
             // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(73, 107);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(41, 13);
+            this.labelControl5.TabIndex = 16;
+            this.labelControl5.Text = "Açıklama";
+            // 
             // TxtDescription
             // 
             this.TxtDescription.Location = new System.Drawing.Point(152, 106);
             this.TxtDescription.Name = "TxtDescription";
             this.TxtDescription.Size = new System.Drawing.Size(272, 112);
             this.TxtDescription.TabIndex = 7;
+            // 
+            // callid
+            // 
+            this.callid.Location = new System.Drawing.Point(73, 15);
+            this.callid.Name = "callid";
+            this.callid.Size = new System.Drawing.Size(42, 13);
+            this.callid.TabIndex = 1;
+            this.callid.Text = "Çağrı ID ";
             // 
             // TxtCallID
             // 
@@ -188,6 +170,22 @@ namespace JobTrackingProject.EmployeeTaskForms
             this.pictureEdit3.Size = new System.Drawing.Size(24, 24);
             this.pictureEdit3.TabIndex = 11;
             // 
+            // txtclocks
+            // 
+            this.txtclocks.Location = new System.Drawing.Point(73, 45);
+            this.txtclocks.Name = "txtclocks";
+            this.txtclocks.Size = new System.Drawing.Size(25, 13);
+            this.txtclocks.TabIndex = 6;
+            this.txtclocks.Text = "Saat ";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(73, 74);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(24, 13);
+            this.labelControl3.TabIndex = 10;
+            this.labelControl3.Text = "Tarih";
+            // 
             // pictureEdit2
             // 
             this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
@@ -201,6 +199,16 @@ namespace JobTrackingProject.EmployeeTaskForms
             this.pictureEdit2.Size = new System.Drawing.Size(24, 24);
             this.pictureEdit2.TabIndex = 8;
             // 
+            // BtnSave
+            // 
+            this.BtnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnSave.ImageOptions.Image")));
+            this.BtnSave.Location = new System.Drawing.Point(337, 248);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(102, 23);
+            this.BtnSave.TabIndex = 23;
+            this.BtnSave.Text = "Kaydet";
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
             // BtnGiveUp
             // 
             this.BtnGiveUp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGiveUp.ImageOptions.Image")));
@@ -211,13 +219,6 @@ namespace JobTrackingProject.EmployeeTaskForms
             this.BtnGiveUp.Text = "Vazgeç";
             this.BtnGiveUp.Click += new System.EventHandler(this.BtnGiveUp_Click);
             // 
-            // TxtClock
-            // 
-            this.TxtClock.Location = new System.Drawing.Point(152, 42);
-            this.TxtClock.Name = "TxtClock";
-            this.TxtClock.Size = new System.Drawing.Size(272, 20);
-            this.TxtClock.TabIndex = 18;
-            // 
             // FrmCallDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,11 +228,13 @@ namespace JobTrackingProject.EmployeeTaskForms
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.BtnGiveUp);
             this.Name = "FrmCallDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Çağrı Detay Girişi";
             this.Load += new System.EventHandler(this.FrmCallDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtClock.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDates.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDates.Properties)).EndInit();
@@ -240,7 +243,6 @@ namespace JobTrackingProject.EmployeeTaskForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtClock.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

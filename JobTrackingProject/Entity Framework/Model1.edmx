@@ -23,20 +23,33 @@
           <Property Name="CallStatement" Type="nvarchar(max)" />
           <Property Name="CallStatus" Type="bit" />
           <Property Name="CallDate" Type="date" />
+          <Property Name="CallEmployee" Type="int" />
+        </EntityType>
+        <EntityType Name="TblCallDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetailCall" Type="int" />
+          <Property Name="DetailStatement" Type="nvarchar" MaxLength="250" />
+          <Property Name="DetailDate" Type="date" />
+          <Property Name="DetailClock" Type="char" MaxLength="5" />
         </EntityType>
         <EntityType Name="TblCompanies">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="30" />
           <Property Name="Authorized" Type="nvarchar" MaxLength="30" />
           <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" />
           <Property Name="Sector" Type="nvarchar" MaxLength="30" />
           <Property Name="Province" Type="nvarchar" MaxLength="20" />
           <Property Name="District" Type="nvarchar" MaxLength="30" />
           <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="Image" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="TblDepartments">
           <Key>
@@ -57,6 +70,19 @@
           <Property Name="Image" Type="nvarchar" MaxLength="100" />
           <Property Name="Department" Type="int" />
           <Property Name="Status" Type="bit" />
+          <Property Name="Role" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="TblMessage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sender" Type="int" />
+          <Property Name="Receiver" Type="int" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="50" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="MessageDate" Type="date" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="TblTask">
           <Key>
@@ -67,7 +93,7 @@
           <Property Name="GetTask" Type="int" />
           <Property Name="Satement" Type="nvarchar" MaxLength="500" />
           <Property Name="Status" Type="bit" />
-          <Property Name="Dates" Type="date" />
+          <Property Name="Dates" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="TblTaskDetail">
           <Key>
@@ -79,15 +105,27 @@
           <Property Name="Dates" Type="date" />
           <Property Name="Clock" Type="char" MaxLength="5" />
         </EntityType>
-        <Association Name="FK_TblCall_TblCompanies">
-          <End Role="TblCompanies" Type="Self.TblCompanies" Multiplicity="0..1" />
+        <Association Name="FK_TblCall_TblEmployee">
+          <End Role="TblEmployee" Type="Self.TblEmployee" Multiplicity="0..1" />
           <End Role="TblCall" Type="Self.TblCall" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="TblCompanies">
+            <Principal Role="TblEmployee">
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="TblCall">
-              <PropertyRef Name="CallCompany" />
+              <PropertyRef Name="CallEmployee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblCallDetail_TblCall">
+          <End Role="TblCall" Type="Self.TblCall" Multiplicity="0..1" />
+          <End Role="TblCallDetail" Type="Self.TblCallDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCall">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblCallDetail">
+              <PropertyRef Name="DetailCall" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -100,6 +138,30 @@
             </Principal>
             <Dependent Role="TblEmployee">
               <PropertyRef Name="Department" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblMessage_TblCompanies">
+          <End Role="TblCompanies" Type="Self.TblCompanies" Multiplicity="0..1" />
+          <End Role="TblMessage" Type="Self.TblMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCompanies">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblMessage">
+              <PropertyRef Name="Sender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblMessage_TblCompanies1">
+          <End Role="TblCompanies" Type="Self.TblCompanies" Multiplicity="0..1" />
+          <End Role="TblMessage" Type="Self.TblMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCompanies">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblMessage">
+              <PropertyRef Name="Receiver" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -118,18 +180,32 @@
         <EntityContainer Name="DbJobTrackingModelStoreContainer">
           <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCall" EntityType="Self.TblCall" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCallDetail" EntityType="Self.TblCallDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCompanies" EntityType="Self.TblCompanies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDepartments" EntityType="Self.TblDepartments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblEmployee" EntityType="Self.TblEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblMessage" EntityType="Self.TblMessage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblTask" EntityType="Self.TblTask" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblTaskDetail" EntityType="Self.TblTaskDetail" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_TblCall_TblCompanies" Association="Self.FK_TblCall_TblCompanies">
-            <End Role="TblCompanies" EntitySet="TblCompanies" />
+          <AssociationSet Name="FK_TblCall_TblEmployee" Association="Self.FK_TblCall_TblEmployee">
+            <End Role="TblEmployee" EntitySet="TblEmployee" />
             <End Role="TblCall" EntitySet="TblCall" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblCallDetail_TblCall" Association="Self.FK_TblCallDetail_TblCall">
+            <End Role="TblCall" EntitySet="TblCall" />
+            <End Role="TblCallDetail" EntitySet="TblCallDetail" />
           </AssociationSet>
           <AssociationSet Name="FK_TblEmployee_TblDepartments" Association="Self.FK_TblEmployee_TblDepartments">
             <End Role="TblDepartments" EntitySet="TblDepartments" />
             <End Role="TblEmployee" EntitySet="TblEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblMessage_TblCompanies" Association="Self.FK_TblMessage_TblCompanies">
+            <End Role="TblCompanies" EntitySet="TblCompanies" />
+            <End Role="TblMessage" EntitySet="TblMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblMessage_TblCompanies1" Association="Self.FK_TblMessage_TblCompanies1">
+            <End Role="TblCompanies" EntitySet="TblCompanies" />
+            <End Role="TblMessage" EntitySet="TblMessage" />
           </AssociationSet>
           <AssociationSet Name="FK_TblTaskDetail_TblTask" Association="Self.FK_TblTaskDetail_TblTask">
             <End Role="TblTask" EntitySet="TblTask" />
@@ -171,6 +247,8 @@
           <NavigationProperty Name="TblTask" Relationship="Self.FK_TblTask_TblEmployee" FromRole="TblEmployee" ToRole="TblTask" />
           <NavigationProperty Name="TblTask1" Relationship="Self.FK_TblTask_TblEmployee1" FromRole="TblEmployee" ToRole="TblTask" />
           <Property Name="Status" Type="Boolean" />
+          <Property Name="Role" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="TblCall" Relationship="DbJobTrackingModel.FK_TblCall_TblEmployee" FromRole="TblEmployee" ToRole="TblCall" />
         </EntityType>
         <EntityType Name="TblTask">
           <Key>
@@ -181,7 +259,7 @@
           <Property Name="GetTask" Type="Int32" />
           <Property Name="Satement" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
-          <Property Name="Dates" Type="DateTime" Precision="0" />
+          <Property Name="Dates" Type="DateTime" Precision="0" Nullable="false" />
           <NavigationProperty Name="TblEmployee" Relationship="Self.FK_TblTask_TblEmployee" FromRole="TblTask" ToRole="TblEmployee" />
           <NavigationProperty Name="TblEmployee1" Relationship="Self.FK_TblTask_TblEmployee1" FromRole="TblTask" ToRole="TblEmployee" />
           <NavigationProperty Name="TblTaskDetail" Relationship="Self.FK_TblTaskDetail_TblTask" FromRole="TblTask" ToRole="TblTaskDetail" />
@@ -211,6 +289,10 @@
           <Property Name="District" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TblCall" Relationship="DbJobTrackingModel.FK_TblCall_TblCompanies" FromRole="TblCompanies" ToRole="TblCall" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TblMessage" Relationship="DbJobTrackingModel.FK_TblMessage_TblCompanies" FromRole="TblCompanies" ToRole="TblMessage" />
+          <NavigationProperty Name="TblMessage1" Relationship="DbJobTrackingModel.FK_TblMessage_TblCompanies1" FromRole="TblCompanies" ToRole="TblMessage" />
         </EntityType>
         <Association Name="FK_TblEmployee_TblDepartments">
           <End Role="TblDepartments" Type="Self.TblDepartments" Multiplicity="0..1" />
@@ -288,6 +370,24 @@
             <End Role="TblCompanies" EntitySet="TblCompanies" />
             <End Role="TblCall" EntitySet="TblCall" />
           </AssociationSet>
+          <EntitySet Name="TblCallDetail" EntityType="DbJobTrackingModel.TblCallDetail" />
+          <EntitySet Name="TblMessage" EntityType="DbJobTrackingModel.TblMessage" />
+          <AssociationSet Name="FK_TblCallDetail_TblCall" Association="DbJobTrackingModel.FK_TblCallDetail_TblCall">
+            <End Role="TblCall" EntitySet="TblCall" />
+            <End Role="TblCallDetail" EntitySet="TblCallDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblMessage_TblCompanies" Association="DbJobTrackingModel.FK_TblMessage_TblCompanies">
+            <End Role="TblCompanies" EntitySet="TblCompanies" />
+            <End Role="TblMessage" EntitySet="TblMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblMessage_TblCompanies1" Association="DbJobTrackingModel.FK_TblMessage_TblCompanies1">
+            <End Role="TblCompanies" EntitySet="TblCompanies" />
+            <End Role="TblMessage" EntitySet="TblMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblCall_TblEmployee" Association="DbJobTrackingModel.FK_TblCall_TblEmployee">
+            <End Role="TblEmployee" EntitySet="TblEmployee" />
+            <End Role="TblCall" EntitySet="TblCall" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="TblCall">
           <Key>
@@ -300,6 +400,9 @@
           <Property Name="CallDate" Type="DateTime" Precision="0" />
           <NavigationProperty Name="TblCompanies" Relationship="DbJobTrackingModel.FK_TblCall_TblCompanies" FromRole="TblCall" ToRole="TblCompanies" />
           <Property Name="CallStatus" Type="Boolean" />
+          <NavigationProperty Name="TblCallDetail" Relationship="DbJobTrackingModel.FK_TblCallDetail_TblCall" FromRole="TblCall" ToRole="TblCallDetail" />
+          <Property Name="CallEmployee" Type="Int32" />
+          <NavigationProperty Name="TblEmployee" Relationship="DbJobTrackingModel.FK_TblCall_TblEmployee" FromRole="TblCall" ToRole="TblEmployee" />
         </EntityType>
         <Association Name="FK_TblCall_TblCompanies">
           <End Type="DbJobTrackingModel.TblCompanies" Role="TblCompanies" Multiplicity="0..1" />
@@ -310,6 +413,79 @@
             </Principal>
             <Dependent Role="TblCall">
               <PropertyRef Name="CallCompany" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TblCallDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetailCall" Type="Int32" />
+          <Property Name="DetailStatement" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DetailDate" Type="DateTime" Precision="0" />
+          <Property Name="DetailClock" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="TblCall" Relationship="DbJobTrackingModel.FK_TblCallDetail_TblCall" FromRole="TblCallDetail" ToRole="TblCall" />
+        </EntityType>
+        <EntityType Name="TblMessage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sender" Type="Int32" />
+          <Property Name="Receiver" Type="Int32" />
+          <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MessageDate" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="Boolean" />
+          <NavigationProperty Name="TblCompanies" Relationship="DbJobTrackingModel.FK_TblMessage_TblCompanies" FromRole="TblMessage" ToRole="TblCompanies" />
+          <NavigationProperty Name="TblCompanies1" Relationship="DbJobTrackingModel.FK_TblMessage_TblCompanies1" FromRole="TblMessage" ToRole="TblCompanies" />
+        </EntityType>
+        <Association Name="FK_TblCallDetail_TblCall">
+          <End Type="DbJobTrackingModel.TblCall" Role="TblCall" Multiplicity="0..1" />
+          <End Type="DbJobTrackingModel.TblCallDetail" Role="TblCallDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCall">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblCallDetail">
+              <PropertyRef Name="DetailCall" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblMessage_TblCompanies">
+          <End Type="DbJobTrackingModel.TblCompanies" Role="TblCompanies" Multiplicity="0..1" />
+          <End Type="DbJobTrackingModel.TblMessage" Role="TblMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCompanies">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblMessage">
+              <PropertyRef Name="Sender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblMessage_TblCompanies1">
+          <End Type="DbJobTrackingModel.TblCompanies" Role="TblCompanies" Multiplicity="0..1" />
+          <End Type="DbJobTrackingModel.TblMessage" Role="TblMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCompanies">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblMessage">
+              <PropertyRef Name="Receiver" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblCall_TblEmployee">
+          <End Type="DbJobTrackingModel.TblEmployee" Role="TblEmployee" Multiplicity="0..1" />
+          <End Type="DbJobTrackingModel.TblCall" Role="TblCall" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblEmployee">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblCall">
+              <PropertyRef Name="CallEmployee" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -339,6 +515,7 @@
           <EntitySetMapping Name="TblEmployee">
             <EntityTypeMapping TypeName="DbJobTrackingModel.TblEmployee">
               <MappingFragment StoreEntitySet="TblEmployee">
+                <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -376,6 +553,8 @@
           <EntitySetMapping Name="TblCompanies">
             <EntityTypeMapping TypeName="DbJobTrackingModel.TblCompanies">
               <MappingFragment StoreEntitySet="TblCompanies">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Authorized" ColumnName="Authorized" />
@@ -391,11 +570,36 @@
           <EntitySetMapping Name="TblCall">
             <EntityTypeMapping TypeName="DbJobTrackingModel.TblCall">
               <MappingFragment StoreEntitySet="TblCall">
+                <ScalarProperty Name="CallEmployee" ColumnName="CallEmployee" />
                 <ScalarProperty Name="CallStatus" ColumnName="CallStatus" />
                 <ScalarProperty Name="CallDate" ColumnName="CallDate" />
                 <ScalarProperty Name="CallStatement" ColumnName="CallStatement" />
                 <ScalarProperty Name="CallSubject" ColumnName="CallSubject" />
                 <ScalarProperty Name="CallCompany" ColumnName="CallCompany" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCallDetail">
+            <EntityTypeMapping TypeName="DbJobTrackingModel.TblCallDetail">
+              <MappingFragment StoreEntitySet="TblCallDetail">
+                <ScalarProperty Name="DetailClock" ColumnName="DetailClock" />
+                <ScalarProperty Name="DetailDate" ColumnName="DetailDate" />
+                <ScalarProperty Name="DetailStatement" ColumnName="DetailStatement" />
+                <ScalarProperty Name="DetailCall" ColumnName="DetailCall" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMessage">
+            <EntityTypeMapping TypeName="DbJobTrackingModel.TblMessage">
+              <MappingFragment StoreEntitySet="TblMessage">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+                <ScalarProperty Name="Sender" ColumnName="Sender" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

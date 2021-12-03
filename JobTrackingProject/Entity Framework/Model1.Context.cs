@@ -32,5 +32,7 @@ namespace JobTrackingProject.Entity_Framework
         public virtual DbSet<TblTaskDetail> TblTaskDetail { get; set; }
         public virtual DbSet<TblCompanies> TblCompanies { get; set; }
         public virtual DbSet<TblCall> TblCall { get; set; }
+        public virtual DbSet<TblCallDetail> TblCallDetail { get; set; }
+        public virtual DbSet<TblMessage> TblMessage { get; set; }
     }
 }

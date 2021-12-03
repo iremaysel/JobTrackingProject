@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using JobTrackingProject.Entity_Framework;
 
 namespace JobTrackingProject.EmployeeTaskForms
 {
@@ -18,6 +20,7 @@ namespace JobTrackingProject.EmployeeTaskForms
         }
 
         public int id;
+        DbJobTrackingEntities db = new DbJobTrackingEntities();
 
         private void BtnGiveUp_Click(object sender, EventArgs e)
         {
@@ -33,6 +36,23 @@ namespace JobTrackingProject.EmployeeTaskForms
             clocks = DateTime.Now.ToShortTimeString();
             TxtDates.Text = dates;
             TxtClock.Text = clocks;
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            TblCallDetail t = new TblCallDetail();
+            t.DetailCall = int.Parse(TxtCallID.Text);
+            t.DetailClock = TxtClock.Text;
+            t.DetailDate = DateTime.Parse(TxtDates.Text);
+            t.DetailStatement = TxtDescription.Text;
+            db.TblCallDetail.Add(t);
+            db.SaveChanges();
+            XtraMessageBox.Show("Çağrı Detayları Başarıyla Eklendi!");
+            this.Close();
+
+
+
+
         }
     }
 }
