@@ -1,7 +1,7 @@
 ﻿
 namespace JobTrackingProject.EmployeeTaskForms
 {
-    partial class FrmActiveTasks
+    partial class FrmCallList
     {
         /// <summary>
         /// Required designer variable.
@@ -51,16 +51,15 @@ namespace JobTrackingProject.EmployeeTaskForms
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // FrmActiveTasks
+            // FrmCallList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 326);
             this.Controls.Add(this.gridControl1);
-            this.Name = "FrmActiveTasks";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Aktif Görevler";
-            this.Load += new System.EventHandler(this.FrmActiveTasks_Load);
+            this.Name = "FrmCallList";
+            this.Text = "Çağrı Listesi";
+            this.Load += new System.EventHandler(this.FrmCallList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);

@@ -96,6 +96,18 @@
     <Compile Include="EmployeeTaskForms\FrmActiveTasks.Designer.cs">
       <DependentUpon>FrmActiveTasks.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeTaskForms\FrmCallDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeTaskForms\FrmCallDetail.Designer.cs">
+      <DependentUpon>FrmCallDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeTaskForms\FrmCallList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeTaskForms\FrmCallList.Designer.cs">
+      <DependentUpon>FrmCallList.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeTaskForms\FrmEmployeeForms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,10 +216,22 @@
     <Compile Include="Forms\FrmTaskList.Designer.cs">
       <DependentUpon>FrmTaskList.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginForms\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EmployeeTaskForms\FrmActiveTasks.resx">
       <DependentUpon>FrmActiveTasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeTaskForms\FrmCallDetail.resx">
+      <DependentUpon>FrmCallDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeTaskForms\FrmCallList.resx">
+      <DependentUpon>FrmCallList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeTaskForms\FrmEmployeeForms.resx">
       <DependentUpon>FrmEmployeeForms.cs</DependentUpon>
@@ -244,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmTaskList.resx">
       <DependentUpon>FrmTaskList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,7 @@ namespace JobTrackingProject.EmployeeTaskForms
         EmployeeTaskForms.FrmActiveTasks frm1;
         private void BtnActiveTasks_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (Application.OpenForms["EmployeeTaskForms.FrmActiveTasks"] == null)
+            if (Application.OpenForms["FrmActiveTasks"] == null)
             {
                 frm1 = new EmployeeTaskForms.FrmActiveTasks();
                 frm1.MdiParent = this;
@@ -28,14 +29,14 @@ namespace JobTrackingProject.EmployeeTaskForms
             }
             else
             {
-                Application.OpenForms["EmployeeTaskForms.FrmActiveTasks"].Activate();
+                Application.OpenForms["FrmActiveTasks"].Activate();
             }
         }
 
         EmployeeTaskForms.FrmPassiveTasks frm2;
         private void BtnPassiveTasks_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (Application.OpenForms["EmployeeTaskForms.FrmPassiveTasks"] == null)
+            if (Application.OpenForms["FrmPassiveTasks"] == null)
             {
                 frm2 = new EmployeeTaskForms.FrmPassiveTasks();
                 frm2.MdiParent = this;
@@ -43,7 +44,27 @@ namespace JobTrackingProject.EmployeeTaskForms
             }
             else
             {
-                Application.OpenForms["EmployeeTaskForms.FrmPassiveTasks"].Activate();
+                Application.OpenForms["FrmPassiveTasks"].Activate();
+            }
+        }
+
+        private void FrmEmployeeForms_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        EmployeeTaskForms.FrmCallList frm3;
+        private void BtnCallList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (Application.OpenForms["FrmCallList"] == null)
+            {
+                frm3 = new EmployeeTaskForms.FrmCallList();
+                frm3.MdiParent = this;
+                frm3.Show();
+            }
+            else
+            {
+                Application.OpenForms["FrmCallList"].Activate();
             }
         }
     }

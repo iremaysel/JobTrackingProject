@@ -16,7 +16,7 @@ namespace JobTrackingProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmployeeTaskForms.FrmEmployeeForms());
+            Application.Run(new LoginForms.FrmLogin());
         }
     }
 }

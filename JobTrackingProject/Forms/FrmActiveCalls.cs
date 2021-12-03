@@ -30,7 +30,7 @@ namespace JobTrackingProject.Forms
                               ÇağrıKonusu = x.CallSubject,
                               Açıklama = x.CallStatement,
                               Durum = x.CallStatus
-                          }).Where(y => y.Durum == true).ToList();
+                          }).Where(y => y.Durum == true && y.FirmaAdı == "Firma A").ToList();
         
             gridControl1.DataSource = values;
 

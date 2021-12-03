@@ -22,15 +22,17 @@ namespace JobTrackingProject.EmployeeTaskForms
 
         private void FrmActiveTasks_Load(object sender, EventArgs e)
         {
-            var values = (from x in db.TblTask select new 
-            {
-                x.ID,
-                Açıklama= x.Satement,
-                Tarih = x.Dates,
-                GörevAlan = x.GetTask,
-                Durum = x.Status
-            }).Where(y => y.GörevAlan == 7 && y.Durum == true).ToList();
+            var values = (from x in db.TblTask
+                          select new
+                          {
+                              x.ID,
+                              Açıklama = x.Satement,
+                              Tarih = x.Dates,
+                              GörevAlan = x.GetTask,
+                              Durum = x.Status
+                          }).Where(y => y.GörevAlan == 7 && y.Durum == true).ToList();
             gridControl1.DataSource = values;
+
             gridView1.Columns["GörevAlan"].Visible = false;
             gridView1.Columns["Durum"].Visible = false;
 

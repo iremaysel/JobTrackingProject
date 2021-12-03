@@ -45,7 +45,7 @@ namespace JobTrackingProject.Forms
             t.Status = true;
             t.GetTask = int.Parse(LueGetTask.EditValue.ToString());
             t.Dates = DateTime.Parse(TxtDates.Text);
-            t.GiveTask = int.Parse(TxtGiveTesk.Text);
+            t.GiveTask = 1;
             db.TblTask.Add(t);
             db.SaveChanges();
             XtraMessageBox.Show("Görev başarılı bir şekilde tanımlandı.", "Bilgi", MessageBoxButtons.OK,
