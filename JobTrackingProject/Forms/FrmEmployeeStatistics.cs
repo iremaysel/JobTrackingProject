@@ -28,7 +28,7 @@ namespace JobTrackingProject.Forms
 
         }
 
-        private DbJobTrackingEntities db = new DbJobTrackingEntities();
+        DbJobTrackingEntities db = new DbJobTrackingEntities();
         private void FrmEmployeeStatistics_Load(object sender, EventArgs e)
         {
             LblTotalDepartment.Text = db.TblDepartments.Count().ToString();

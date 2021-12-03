@@ -90,6 +90,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeeTaskForms\FrmActiveTasks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeTaskForms\FrmActiveTasks.Designer.cs">
+      <DependentUpon>FrmActiveTasks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeTaskForms\FrmEmployeeForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeTaskForms\FrmEmployeeForms.Designer.cs">
+      <DependentUpon>FrmEmployeeForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeTaskForms\FrmPassiveTasks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeTaskForms\FrmPassiveTasks.Designer.cs">
+      <DependentUpon>FrmPassiveTasks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entity Framework\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -188,6 +206,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EmployeeTaskForms\FrmActiveTasks.resx">
+      <DependentUpon>FrmActiveTasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeTaskForms\FrmEmployeeForms.resx">
+      <DependentUpon>FrmEmployeeForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeTaskForms\FrmPassiveTasks.resx">
+      <DependentUpon>FrmPassiveTasks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,5 +323,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
