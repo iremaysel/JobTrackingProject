@@ -49,10 +49,6 @@ namespace JobTrackingProject.EmployeeTaskForms
             db.SaveChanges();
             XtraMessageBox.Show("Çağrı Detayları Başarıyla Eklendi!");
             this.Close();
-
-
-
-
         }
     }
 }
