@@ -28,5 +28,10 @@ namespace JobTrackingProject.LoginForms
             EmployeeTaskForms.FrmEmployeeForms fr = new EmployeeTaskForms.FrmEmployeeForms();
             fr.Show();
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
