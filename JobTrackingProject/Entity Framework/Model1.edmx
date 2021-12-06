@@ -71,6 +71,7 @@
           <Property Name="Department" Type="int" />
           <Property Name="Status" Type="bit" />
           <Property Name="Role" Type="char" MaxLength="1" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="TblMessage">
           <Key>
@@ -249,6 +250,7 @@
           <Property Name="Status" Type="Boolean" />
           <Property Name="Role" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="TblCall" Relationship="DbJobTrackingModel.FK_TblCall_TblEmployee" FromRole="TblEmployee" ToRole="TblCall" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TblTask">
           <Key>
@@ -515,6 +517,7 @@
           <EntitySetMapping Name="TblEmployee">
             <EntityTypeMapping TypeName="DbJobTrackingModel.TblEmployee">
               <MappingFragment StoreEntitySet="TblEmployee">
+                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="ID" ColumnName="ID" />

@@ -31,6 +31,7 @@ namespace JobTrackingProject.Entity_Framework
         public Nullable<int> Department { get; set; }
         public Nullable<bool> Status { get; set; }
         public string Role { get; set; }
+        public string Password { get; set; }
     
         public virtual TblDepartments TblDepartments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

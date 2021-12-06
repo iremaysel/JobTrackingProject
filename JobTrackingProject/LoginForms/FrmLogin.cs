@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using JobTrackingProject.Entity_Framework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,24 +19,15 @@ namespace JobTrackingProject.LoginForms
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form fr = new Form1();
-            fr.Show();
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            EmployeeTaskForms.FrmEmployeeForms fr = new EmployeeTaskForms.FrmEmployeeForms();
-            fr.Show();
-        }
+        DbJobTrackingEntities db = new DbJobTrackingEntities();
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void textEdit1_Click(object sender, EventArgs e)
+        private void TxtUser_Click(object sender, EventArgs e)
         {
            
             panel3.BackColor = SystemColors.Control;
@@ -42,14 +35,14 @@ namespace JobTrackingProject.LoginForms
 
         }
 
-        private void textEdit3_Click(object sender, EventArgs e)
+        private void TxtPassword_Click(object sender, EventArgs e)
         {
             panel4.BackColor = SystemColors.Control;
             panel3.BackColor = SystemColors.ControlLightLight;
 
         }
 
-        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        private void TxtUser_EditValueChanged(object sender, EventArgs e)
         {
 
         }
@@ -59,16 +52,50 @@ namespace JobTrackingProject.LoginForms
             this.Close();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void BtnAdmin_Click_1(object sender, EventArgs e)
         {
-            Form fr = new Form1();
-            fr.Show();
+            
+            var adminValue = db.TblAdmin.Where(x => x.Users == TxtUser.Text && 
+            x.Password == TxtPassword.Text).FirstOrDefault();
+            if(adminValue != null)
+            {
+              
+                XtraMessageBox.Show("Hoşgeldiniz", "Başarılı", MessageBoxButtons.OK,
+               MessageBoxIcon.Information);
+                Form fr = new Form1();
+                fr.Show();
+                this.Hide();
+
+            }
+            else
+            {
+                XtraMessageBox.Show("Hatalı Giriş Yaptınız!", "Uyarı", MessageBoxButtons.OK,
+               MessageBoxIcon.Information);
+            }
+            
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void BtnEmployee_Click_1(object sender, EventArgs e)
         {
-            EmployeeTaskForms.FrmEmployeeForms fr = new EmployeeTaskForms.FrmEmployeeForms();
-            fr.Show();
+            var employeeValue = db.TblEmployee.Where(x => x.Email == TxtUser.Text &&
+            x.Password == TxtPassword.Text).FirstOrDefault();
+            if (employeeValue != null)
+            {
+
+                XtraMessageBox.Show("Hoşgeldiniz", "Başarılı", MessageBoxButtons.OK,
+               MessageBoxIcon.Information);
+                EmployeeTaskForms.FrmEmployeeForms fr = new EmployeeTaskForms.FrmEmployeeForms();
+                fr.Show();
+                this.Hide();
+                
+
+            }
+            else
+            {
+                XtraMessageBox.Show("Hatalı Giriş Yaptınız!", "Uyarı", MessageBoxButtons.OK,
+               MessageBoxIcon.Information);
+            }
+            
         }
     }
 }
