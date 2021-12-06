@@ -33,5 +33,42 @@ namespace JobTrackingProject.LoginForms
         {
 
         }
+
+        private void textEdit1_Click(object sender, EventArgs e)
+        {
+           
+            panel3.BackColor = SystemColors.Control;
+            panel4.BackColor = SystemColors.ControlLightLight;
+
+        }
+
+        private void textEdit3_Click(object sender, EventArgs e)
+        {
+            panel4.BackColor = SystemColors.Control;
+            panel3.BackColor = SystemColors.ControlLightLight;
+
+        }
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form fr = new Form1();
+            fr.Show();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            EmployeeTaskForms.FrmEmployeeForms fr = new EmployeeTaskForms.FrmEmployeeForms();
+            fr.Show();
+        }
     }
 }

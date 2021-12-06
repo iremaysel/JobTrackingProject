@@ -333,6 +333,14 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\LOGINEND.png" />
+    <None Include="Resources\Signin.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\user kopya.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\icons8_fingerprint_scan.ico" />
+    <None Include="Resources\icons64_fingerprint_scan_1.ico" />
     <Content Include="Resources\icons8_homebrew_1.ico" />
     <None Include="Resources\icons8_phone_ringing.ico" />
     <None Include="Resources\barButtonItem20.ImageOptions.Image.png" />
