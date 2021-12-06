@@ -20,9 +20,11 @@ namespace JobTrackingProject.EmployeeTaskForms
 
         
         DbJobTrackingEntities db = new DbJobTrackingEntities();
+        public string email2;
 
         private void FrmCallList_Load(object sender, EventArgs e)
         {
+            var employeeID = db.TblEmployee.Where(x => x.Email == email2).Select(y => y.ID).FirstOrDefault();
             gridControl1.DataSource = (from x in db.TblCall
                                        select new
                                        {
@@ -31,11 +33,13 @@ namespace JobTrackingProject.EmployeeTaskForms
                                            Telefon = x.TblCompanies.Telephone,
                                            Mail = x.TblCompanies.Email,
                                            Açıklama = x.CallStatement,
+                                           x.CallEmployee,
                                            x.CallStatus
-                                       }).Where(y => y.CallStatus == true).ToList();
+                                       }).Where(y => y.CallStatus == true && y.CallEmployee == employeeID).ToList();
 
             gridView1.Columns["CallStatus"].Visible = false;
             gridView1.Columns["ID"].Visible = false;
+            gridView1.Columns["CallEmployee"].Visible = false;
 
         }
 

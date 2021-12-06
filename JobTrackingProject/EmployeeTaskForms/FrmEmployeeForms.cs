@@ -19,12 +19,15 @@ namespace JobTrackingProject.EmployeeTaskForms
         }
 
         EmployeeTaskForms.FrmActiveTasks frm1;
+        public string email;
+
         private void BtnActiveTasks_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (Application.OpenForms["FrmActiveTasks"] == null)
             {
                 frm1 = new EmployeeTaskForms.FrmActiveTasks();
                 frm1.MdiParent = this;
+                frm1.email2 = email;
                 frm1.Show();
             }
             else
@@ -40,6 +43,7 @@ namespace JobTrackingProject.EmployeeTaskForms
             {
                 frm2 = new EmployeeTaskForms.FrmPassiveTasks();
                 frm2.MdiParent = this;
+                frm2.emailPassive = email;
                 frm2.Show();
             }
             else
@@ -60,6 +64,7 @@ namespace JobTrackingProject.EmployeeTaskForms
             {
                 frm3 = new EmployeeTaskForms.FrmCallList();
                 frm3.MdiParent = this;
+                frm3.email2 = email;
                 frm3.Show();
             }
             else

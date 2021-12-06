@@ -19,9 +19,12 @@ namespace JobTrackingProject.EmployeeTaskForms
         }
 
         DbJobTrackingEntities db = new DbJobTrackingEntities();
+        public string email2;
 
         private void FrmActiveTasks_Load(object sender, EventArgs e)
         {
+            var employeeID = db.TblEmployee.Where(x => x.Email == email2).Select(y => y.ID).FirstOrDefault();
+            
             var values = (from x in db.TblTask
                           select new
                           {
@@ -30,7 +33,7 @@ namespace JobTrackingProject.EmployeeTaskForms
                               Tarih = x.Dates,
                               GörevAlan = x.GetTask,
                               Durum = x.Status
-                          }).Where(y => y.GörevAlan == 7 && y.Durum == true).ToList();
+                          }).Where(y => y.GörevAlan == employeeID && y.Durum == true).ToList();
             gridControl1.DataSource = values;
 
             gridView1.Columns["GörevAlan"].Visible = false;

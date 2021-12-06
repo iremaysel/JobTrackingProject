@@ -85,6 +85,7 @@ namespace JobTrackingProject.LoginForms
                 XtraMessageBox.Show("Hoşgeldiniz", "Başarılı", MessageBoxButtons.OK,
                MessageBoxIcon.Information);
                 EmployeeTaskForms.FrmEmployeeForms fr = new EmployeeTaskForms.FrmEmployeeForms();
+                fr.email = TxtUser.Text;
                 fr.Show();
                 this.Hide();
                 
