@@ -7,6 +7,7 @@ Yönetim sistemine giriş yapmak için iki adet kullanıcı girişi mevcuttur. A
 - Departmanlar sekmesinde, firma içinde bulunan departman bilgileri ve bu departmanların güncellemesi, eklenmesi ve silinmesine(raporlama ve istatistik bilgileri sonra eklenecektir)
 - Personeller sekmesinde, personel bilgileri, yeni personel ekleme işlemi, güncelleme işlemi, silme işlemi ve personel istatistiklerine
 - Çağrılar sekmesinde, aktif ve pasif çağrıların bilgilerine 
+
 erişim sağlamaktadır. **(Eksik kısımlar güncellenecektir.)**
 
 > ![](/task/AdminPanel.gif)
